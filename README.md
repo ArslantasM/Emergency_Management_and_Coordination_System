@@ -29,31 +29,21 @@ PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanl
 - PostgreSQL 14+ (PostGIS ile)
 - Git
 
-### Veritabanı Kurulumu
 
-```bash
-createdb emergency_management
-psql -d emergency_management -c "CREATE EXTENSION postgis;"
-psql -d emergency_management -c "CREATE EXTENSION postgis_topology;"
 
-### Projenin Başlatılması
+## 🧪 Teknoloji Yığını
 
-git clone <repository-url>
-cd emergency-management
-npm install
-npx prisma generate
-npx prisma db push
-node scripts/add-users.js
-npm run dev
+| Katman            | Teknoloji               |
+|-------------------|-------------------------|
+| Backend           | Python Flask API        |
+| Frontend          | Next.js (React tabanlı) |
+| Veritabanı        | PostgreSQL + PostGIS    |
+| ORM               | Prisma ORM              |
+| Harita Sistemi    | Mapbox GL JS, Leaflet   |
+| Kimlik Doğrulama  | NextAuth.js             |
 
-🧪 Teknoloji Yığını
-| Katman | Teknoloji | 
-| Backend | Python Flask API | 
-| Frontend | Next.js (React tabanlı) | 
-| Veritabanı | PostgreSQL + PostGIS | 
-| ORM | Prisma | 
-| Harita Sistemi | Mapbox GL JS, Leaflet | 
-| Kimlik Doğrulama | NextAuth.js | 
+
+
 
 
 🌐 API Endpoint'leri
@@ -86,3 +76,19 @@ Dashboard Haritası
 Proje fikri, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 🙏
 
 
+### Projenin Başlatılması
+```bash
+git clone <repository-url>
+cd emergency-management
+npm install
+npx prisma generate
+npx prisma db push
+node scripts/add-users.js
+npm run dev
+
+### Veritabanı Kurulumu
+
+```bash
+createdb emergency_management
+psql -d emergency_management -c "CREATE EXTENSION postgis;"
+psql -d emergency_management -c "CREATE EXTENSION postgis_topology;"
