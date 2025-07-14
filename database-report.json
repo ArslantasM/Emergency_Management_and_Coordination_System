@@ -1,0 +1,162 @@
+{
+  "timestamp": "2025-07-03T01:06:04.277Z",
+  "totalTables": 31,
+  "totalRows": 97,
+  "tables": [
+    {
+      "tableName": "User",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Region",
+      "rowCount": 97,
+      "exists": true
+    },
+    {
+      "tableName": "RegionUser",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Emergency",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Task",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Notification",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "CampSite",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Warehouse",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "WarehouseCategory",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "WarehouseInfrastructure",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "WarehouseCondition",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Equipment",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "EquipmentCategory",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Resource",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Personnel",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Volunteer",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Training",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Earthquake",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Fire",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "TsunamiAlert",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "ChatMessage",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Transfer",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "InventoryItem",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "InventoryCategory",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Infrastructure",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Container",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Resident",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Session",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Role",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "Permission",
+      "rowCount": 0,
+      "exists": true
+    },
+    {
+      "tableName": "RolePermission",
+      "rowCount": 0,
+      "exists": true
+    }
+  ]
+}
