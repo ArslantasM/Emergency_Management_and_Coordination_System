@@ -1,0 +1,192 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Deprem API",
+    "description": "Türkiye ve dünya genelindeki deprem verilerini sunan API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3001",
+  "basePath": "/api",
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3001",
+      "description": "Development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Earthquakes",
+      "description": "Deprem verileri ile ilgili endpoint'ler"
+    }
+  ],
+  "paths": {
+    "/earthquakes/kandilli": {
+      "get": {
+        "tags": [
+          "Earthquakes"
+        ],
+        "summary": "Kandilli Rasathanesi deprem verilerini getir",
+        "operationId": "getKandilliEarthquakes",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Başarılı",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "earthquakes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Earthquake"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earthquakes/emsc": {
+      "get": {
+        "tags": [
+          "Earthquakes"
+        ],
+        "summary": "EMSC deprem verilerini getir",
+        "operationId": "getEMSCEarthquakes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "min_magnitude",
+            "in": "query",
+            "type": "number",
+            "description": "Minimum deprem büyüklüğü"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "integer",
+            "description": "Maksimum sonuç sayısı"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Başarılı",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "earthquakes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Earthquake"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earthquakes/all": {
+      "get": {
+        "tags": [
+          "Earthquakes"
+        ],
+        "summary": "Tüm kaynakların deprem verilerini getir",
+        "operationId": "getAllEarthquakes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "min_magnitude",
+            "in": "query",
+            "type": "number",
+            "description": "Minimum deprem büyüklüğü"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Başarılı",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sources": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "count": {
+                  "type": "integer"
+                },
+                "earthquakes": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/Earthquake"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Earthquake": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        },
+        "depth": {
+          "type": "number"
+        },
+        "magnitude": {
+          "type": "number"
+        },
+        "location": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
