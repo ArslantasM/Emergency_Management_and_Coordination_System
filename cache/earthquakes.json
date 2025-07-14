@@ -1,0 +1,45 @@
+{
+  "lastUpdated": "2025-07-01T22:36:40.165Z",
+  "count": 3,
+  "data": [
+    {
+      "id": "eq_1751409400154_1",
+      "eventId": "KOERI_1751409400154",
+      "source": "KOERI",
+      "date": "2025-07-01T22:36:40.154Z",
+      "latitude": 38.7437,
+      "longitude": 35.4781,
+      "depth": 10.5,
+      "magnitude": 4.2,
+      "type": "earthquake",
+      "location": "Kayseri, Türkiye",
+      "tsunamiAlert": false
+    },
+    {
+      "id": "eq_1751409400162_2",
+      "eventId": "KOERI_1751409400163",
+      "source": "KOERI",
+      "date": "2025-07-01T22:35:40.162Z",
+      "latitude": 40.7128,
+      "longitude": 29.1734,
+      "depth": 15.2,
+      "magnitude": 3.8,
+      "type": "earthquake",
+      "location": "İstanbul, Türkiye",
+      "tsunamiAlert": false
+    },
+    {
+      "id": "eq_1751409400162_3",
+      "eventId": "KOERI_1751409400164",
+      "source": "KOERI",
+      "date": "2025-07-01T22:34:40.162Z",
+      "latitude": 39.9334,
+      "longitude": 32.8597,
+      "depth": 8.7,
+      "magnitude": 4.5,
+      "type": "earthquake",
+      "location": "Ankara, Türkiye",
+      "tsunamiAlert": false
+    }
+  ]
+}
