@@ -64,16 +64,20 @@ Katkı sunmak için şu adımları izleyin:
 Daha fazla bilgi için CONTRIBUTING.md ve CLA.md dosyalarını inceleyin.
 
 🔏 Lisans Bilgisi
-Bu yazılım, Apache 2.0 ve BSD 3-Clause lisansları altında sunulmaktadır. Kullanıcılar diledikleri lisansı seçerek kullanabilir. Her iki lisans da Mustafa Barış Arslantaş’ın telif haklarının korunmasını ve adının projeyle ilişkilendirilmesini şart koşar.
+
+Bu yazılım, Apache 2.0 ve BSD 3-Clause lisansları altında sunulmaktadır. Kullanıcılar diledikleri lisansı seçerek kullanabilir. Her iki lisans da geliştirici Mustafa Barış Arslantaş’ın telif haklarının korunmasını ve adının projeyle ilişkilendirilmesini şart koşar.
 
 📞 İletişim
+
 Proje hakkında sorularınız için GitHub Issues bölümünden veya doğrudan şu numaradan iletişime geçebilirsiniz: +90 542 559 69 46
 
 📸 Demo Görüntüler (Opsiyonel)
+
 Dashboard Haritası
 
 🌟 Teşekkürler
-Proje fikri, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 🙏
+
+Küresel düzeyde insanların yararına olacak bu projede fikir, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 🙏
 
 
 ### Projenin Başlatılması
