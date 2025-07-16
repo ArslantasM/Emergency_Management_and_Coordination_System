@@ -1,0 +1,148 @@
+import axios from 'axios';
+
+export interface EarthquakeData {
+  id: string;
+  eventId: string;
+  source: string;
+  date: string;
+  latitude: number;
+  longitude: number;
+  depth: number;
+  magnitude: number;
+  type: string;
+  location: string;
+  tsunamiAlert: boolean;
+}
+
+export interface TsunamiData {
+  id: string;
+  alertId: string;
+  source: string;
+  status: string;
+  severity: string;
+  date: string;
+  expiryDate?: string;
+  description: string;
+  affectedAreas: string[];
+  latitude: number;
+  longitude: number;
+}
+
+// Port otomatik tespiti - Next.js API routes kullan
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || (
+  typeof window !== 'undefined' 
+    ? `${window.location.protocol}//${window.location.hostname}:${window.location.port}`
+    : 'http://localhost:3000'
+);
+
+export const emergencyApi = {
+  getEarthquakes: async (params?: { 
+    days?: number;
+    minMagnitude?: number;
+    source?: string;
+    startDate?: string;
+    endDate?: string;
+  }): Promise<EarthquakeData[]> => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/api/earthquakes`, { 
+        params,
+        timeout: 10000,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      });
+
+      // GeoJSON formatını EarthquakeData formatına dönüştür
+      if (response.data.type === 'FeatureCollection') {
+        return response.data.features.map((feature: any) => ({
+          id: feature.properties.id,
+          eventId: feature.properties.eventId,
+          source: feature.properties.source,
+          date: feature.properties.date,
+          latitude: feature.geometry.coordinates[1],
+          longitude: feature.geometry.coordinates[0],
+          depth: feature.properties.depth,
+          magnitude: feature.properties.magnitude,
+          type: feature.properties.type,
+          location: feature.properties.location,
+          tsunamiAlert: feature.properties.tsunamiAlert
+        }));
+      }
+      return [];
+    } catch (error) {
+      console.error('Deprem verisi alınırken hata:', error);
+      return [];
+    }
+  },
+
+  getTsunamis: async (params?: {
+    startDate?: string;
+    endDate?: string;
+  }): Promise<TsunamiData[]> => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/api/tsunami-alerts`, { 
+        timeout: 10000,
+        headers: {
+          'Cache-Control': 'no-cache',
+          'Pragma': 'no-cache'
+        }
+      });
+
+      // GeoJSON formatını TsunamiData formatına dönüştür
+      if (response.data.type === 'FeatureCollection') {
+        return response.data.features.map((feature: any) => ({
+          id: feature.properties.id,
+          alertId: feature.properties.alertId,
+          source: feature.properties.source,
+          status: feature.properties.status,
+          severity: feature.properties.severity,
+          date: feature.properties.date,
+          expiryDate: feature.properties.expiryDate,
+          description: feature.properties.description,
+          affectedAreas: feature.properties.affectedAreas,
+          latitude: feature.geometry.coordinates[1],
+          longitude: feature.geometry.coordinates[0]
+        }));
+      }
+      return [];
+    } catch (error) {
+      console.error('Tsunami verisi alınırken hata:', error);
+      return [];
+    }
+  },
+
+  subscribeToEmergencyUpdates: (callback: (data: EarthquakeData | TsunamiData) => void) => {
+    // Mock WebSocket connection - gerçek implementasyon için WebSocket kullanılabilir
+    console.log('WebSocket bağlantısı simulasyonu başlatıldı');
+    
+    // Örnek veri güncellemeleri için interval
+    const interval = setInterval(() => {
+      // Rastgele deprem verisi simülasyonu
+      const mockEarthquake: EarthquakeData = {
+        id: `eq_${Date.now()}`,
+        eventId: `EQ${Date.now()}`,
+        source: 'AFAD',
+        date: new Date().toISOString(),
+        latitude: 39 + (Math.random() - 0.5) * 10,
+        longitude: 32 + (Math.random() - 0.5) * 20,
+        depth: Math.random() * 50,
+        magnitude: 2 + Math.random() * 4,
+        type: 'ML',
+        location: 'Test Lokasyon',
+        tsunamiAlert: Math.random() > 0.9
+      };
+      
+      // %30 ihtimalle yeni veri gönder
+      if (Math.random() > 0.7) {
+        callback(mockEarthquake);
+      }
+    }, 30000); // 30 saniyede bir
+
+    // Cleanup fonksiyonu
+    return () => {
+      clearInterval(interval);
+      console.log('WebSocket bağlantısı simulasyonu sonlandırıldı');
+    };
+  }
+}; 

@@ -1,0 +1,165 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dünya Geneli Deprem Verileri</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <style>
+        #map {
+            height: 500px;
+            margin-bottom: 20px;
+        }
+        .magnitude {
+            font-weight: bold;
+        }
+        .earthquake-time {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-4">Dünya Geneli Deprem Verileri</h1>
+        
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="days">Gün Sayısı:</label>
+                    <select class="form-control" id="days">
+                        <option value="1">Son 24 Saat</option>
+                        <option value="7">Son 7 Gün</option>
+                        <option value="30" selected>Son 30 Gün</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="magnitude">Minimum Büyüklük:</label>
+                    <select class="form-control" id="magnitude">
+                        <option value="3">3.0+</option>
+                        <option value="4">4.0+</option>
+                        <option value="4.5" selected>4.5+</option>
+                        <option value="5">5.0+</option>
+                        <option value="6">6.0+</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Büyüklük</th>
+                        <th>Derinlik</th>
+                        <th>Konum</th>
+                        <th>Tsunami Riski</th>
+                        <th>Detaylar</th>
+                    </tr>
+                </thead>
+                <tbody id="earthquakeList"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        let map;
+        let markers = [];
+
+        // Harita başlatma
+        function initMap() {
+            map = L.map('map').setView([0, 0], 2);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+        }
+
+        // Depremleri getir
+        async function fetchEarthquakes() {
+            const days = document.getElementById('days').value;
+            const magnitude = document.getElementById('magnitude').value;
+            
+            try {
+                const response = await fetch(`/api/earthquakes?days=${days}&min_magnitude=${magnitude}`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    displayEarthquakes(data.earthquakes);
+                } else {
+                    alert('Veri alınırken bir hata oluştu.');
+                }
+            } catch (error) {
+                console.error('Hata:', error);
+                alert('Veri alınırken bir hata oluştu.');
+            }
+        }
+
+        // Depremleri göster
+        function displayEarthquakes(earthquakes) {
+            const tbody = document.getElementById('earthquakeList');
+            tbody.innerHTML = '';
+            
+            // Mevcut işaretçileri temizle
+            markers.forEach(marker => map.removeLayer(marker));
+            markers = [];
+
+            earthquakes.forEach(eq => {
+                // Tablo satırı
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${eq.date}</td>
+                    <td class="magnitude">${eq.magnitude}</td>
+                    <td>${eq.depth} km</td>
+                    <td>${eq.location}</td>
+                    <td>${eq.tsunami_risk ? '⚠️ Var' : 'Yok'}</td>
+                    <td><a href="${eq.details_url}" target="_blank">Detaylar</a></td>
+                `;
+                tbody.appendChild(row);
+
+                // Harita işaretçisi
+                const marker = L.circle([eq.latitude, eq.longitude], {
+                    color: getColorByMagnitude(eq.magnitude),
+                    fillColor: getColorByMagnitude(eq.magnitude),
+                    fillOpacity: 0.5,
+                    radius: Math.pow(2, eq.magnitude) * 10000
+                }).addTo(map);
+
+                marker.bindPopup(`
+                    <strong>Büyüklük:</strong> ${eq.magnitude}<br>
+                    <strong>Konum:</strong> ${eq.location}<br>
+                    <strong>Tarih:</strong> ${eq.date}<br>
+                    <strong>Derinlik:</strong> ${eq.depth} km
+                `);
+
+                markers.push(marker);
+            });
+        }
+
+        // Büyüklüğe göre renk
+        function getColorByMagnitude(magnitude) {
+            if (magnitude >= 6) return '#ff0000';
+            if (magnitude >= 5) return '#ff6600';
+            if (magnitude >= 4) return '#ffa500';
+            return '#ffcc00';
+        }
+
+        // Sayfa yüklendiğinde
+        document.addEventListener('DOMContentLoaded', () => {
+            initMap();
+            fetchEarthquakes();
+
+            // Filtre değişikliklerini dinle
+            document.getElementById('days').addEventListener('change', fetchEarthquakes);
+            document.getElementById('magnitude').addEventListener('change', fetchEarthquakes);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Dashboard hover fixes */
+.ant-btn {
+  transition: all 0.3s ease !important;
+  z-index: 1 !important;
+  color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.ant-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  z-index: 10 !important;
+}
+
+.ant-btn-primary {
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
+  color: #fff !important;
+}
+
+.ant-btn-primary:hover {
+  background-color: #40a9ff !important;
+  border-color: #40a9ff !important;
+  color: #fff !important;
+}
+
+.ant-btn-default {
+  color: rgba(0, 0, 0, 0.88) !important;
+  background-color: #fff !important;
+  border-color: #d9d9d9 !important;
+}
+
+.ant-btn-default:hover {
+  color: #1890ff !important;
+  background-color: #fff !important;
+  border-color: #1890ff !important;
+}
+
+.ant-dropdown-trigger:hover {
+  z-index: 1000 !important;
+}
+
+/* Modal fixes - backdrop gölgelenmeli ama content gölgelenmemeli */
+.ant-modal {
+  z-index: 1050 !important;
+}
+
+.ant-modal-mask {
+  z-index: 1040 !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
+
+.ant-modal-content {
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 9px 28px 8px rgba(0, 0, 0, 0.05) !important;
+  background: #fff !important;
+  z-index: 1051 !important;
+}
+
+.ant-modal-wrap {
+  z-index: 1050 !important;
+}
+
+/* Modal içindeki button hover'ları */
+.ant-modal .ant-btn {
+  transition: all 0.3s ease !important;
+}
+
+.ant-modal .ant-btn:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  z-index: auto !important;
+}
+
+/* Notification modal specific styles */
+.ant-modal .ant-form-item-label {
+  font-weight: 600;
+}
+
+.ant-select-dropdown {
+  z-index: 1060 !important;
+}
+
+.ant-picker-dropdown {
+  z-index: 1060 !important;
+}
+
+/* Dashboard card hover effects */
+.ant-card {
+  transition: all 0.3s ease;
+}
+
+.ant-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Button group spacing */
+.ant-space-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Dashboard grid responsive fixes */
+@media (max-width: 768px) {
+  .dashboard-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .dashboard-grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Leaflet map container fixes */
+.leaflet-container {
+  height: 400px;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Notification badges */
+.ant-badge-count {
+  font-size: 12px;
+  min-width: 18px;
+  height: 18px;
+  line-height: 18px;
+}
+
+/* Dashboard stats cards */
+.dashboard-stat-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.dashboard-stat-card .ant-statistic-title {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dashboard-stat-card .ant-statistic-content {
+  color: white;
+}
+
+/* Chat message styles */
+.chat-message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  max-width: 80%;
+}
+
+.chat-message.own {
+  background-color: #1890ff;
+  color: white;
+  margin-left: auto;
+}
+
+.chat-message.other {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.chat-message.system {
+  background-color: #fff2e8;
+  color: #d46b08;
+  text-align: center;
+  max-width: 100%;
+}
+
+.chat-message.alert {
+  background-color: #fff1f0;
+  color: #cf1322;
+}
+
+.chat-message.success {
+  background-color: #f6ffed;
+  color: #52c41a;
+}
+
+/* Responsive text sizes */
+@media (max-width: 576px) {
+  .ant-typography h2 {
+    font-size: 1.5rem;
+  }
+  
+  .ant-typography h3 {
+    font-size: 1.25rem;
+  }
+  
+  .ant-btn-lg {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Drawer içindeki button'lar */
+.ant-drawer .ant-btn {
+  transition: all 0.3s ease !important;
+}
+
+.ant-drawer .ant-btn-primary {
+  background-color: #1890ff !important;
+  border-color: #1890ff !important;
+  color: #fff !important;
+}
+
+.ant-drawer .ant-btn-primary:hover {
+  background-color: #40a9ff !important;
+  border-color: #40a9ff !important;
+  color: #fff !important;
+}
+
+.ant-drawer .ant-btn-default {
+  color: rgba(0, 0, 0, 0.88) !important;
+  background-color: #fff !important;
+  border-color: #d9d9d9 !important;
+}
+
+.ant-drawer .ant-btn-default:hover {
+  color: #1890ff !important;
+  background-color: #fff !important;
+  border-color: #1890ff !important;
+}
+
+/* Button text color fixes - her durumda görünür olsun */
+.ant-btn:not(.ant-btn-link):not(.ant-btn-text) {
+  color: rgba(0, 0, 0, 0.88) !important;
+}
+
+.ant-btn-primary:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+.ant-btn-primary:hover:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+.ant-modal .ant-btn-primary:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+.ant-modal .ant-btn-primary:hover:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+.ant-drawer .ant-btn-primary:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+.ant-drawer .ant-btn-primary:hover:not(.ant-btn-link):not(.ant-btn-text) {
+  color: #fff !important;
+}
+
+/* Emoji marker animasyonları */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.emoji-marker {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.emoji-marker div {
+  user-select: none;
+  pointer-events: none;
+}
