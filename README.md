@@ -1,4 +1,4 @@
-# 🌍 Acil Durum Yönetim ve Koordinasyon Sistemi (Emergency Management System)
+# Acil Durum Yönetim ve Koordinasyon Sistemi (Emergency Management System)
 
 Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformu. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.
 
@@ -14,51 +14,51 @@ Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" ta
 
 ## 📋 İçindekiler
 
-- [🎯 Proje Hakkında](#-proje-hakkında)
-- [🚀 Öne Çıkan Özellikler](#-öne-çıkan-özellikler)
-- [🏗️ Sistem Mimarisi](#️-sistem-mimarisi)
-- [📸 Sistem Modülleri ve Ekran Görüntüleri](#-sistem-modülleri-ve-ekran-görüntüleri)
-- [📦 Kurulum](#-kurulum)
-- [🧪 Teknoloji Yığını](#-teknoloji-yığını)
-- [🌐 API Endpoint'leri](#-api-endpointleri)
-- [🗄️ Veritabanı Şeması](#️-veritabanı-şeması)
-- [🔐 Güvenlik ve Roller](#-güvenlik-ve-roller)
-- [🚀 Geliştirme Süreci](#-geliştirme-süreci)
-- [📈 Roadmap](#-roadmap)
-- [🤝 Katkı Sağlama](#-katkı-sağlama)
-- [📄 Lisans](#-lisans)
-- [📞 İletişim](#-iletişim)
+- [ Proje Hakkında](#-proje-hakkında)
+- [ Öne Çıkan Özellikler](#-öne-çıkan-özellikler)
+- [ Sistem Mimarisi](#️-sistem-mimarisi)
+- [ Sistem Modülleri ve Ekran Görüntüleri](#-sistem-modülleri-ve-ekran-görüntüleri)
+- [ Kurulum](#-kurulum)
+- [ Teknoloji Yığını](#-teknoloji-yığını)
+- [ API Endpoint'leri](#-api-endpointleri)
+- [ Veritabanı Şeması](#️-veritabanı-şeması)
+- [ Güvenlik ve Roller](#-güvenlik-ve-roller)
+- [ Geliştirme Süreci](#-geliştirme-süreci)
+- [ Roadmap](#-roadmap)
+- [ Katkı Sağlama](#-katkı-sağlama)
+- [ Lisans](#-lisans)
+- [ İletişim](#-iletişim)
 
-## 🎯 Proje Hakkında
+##  Proje Hakkında
 
 **Acil Durum Yönetim ve Koordinasyon Sistemi**, dünya çapında afet yönetimi için geliştirilmiş kapsamlı bir açık kaynaklı platformdur. Modern web teknolojileri kullanılarak oluşturulan sistem, küresel düzeyde deprem, yangın ve tsunami verilerini gerçek zamanlı olarak takip eder ve afet yönetimini kolaylaştırır.
 
-### 🌟 Ana Hedefler
+###  Ana Hedefler
 
-- **🌍 Küresel Kapsam**: Dünya genelinde afet verilerinin takibi ve yönetimi
-- **⚡ Gerçek Zamanlı İzleme**: Canlı deprem, yangın ve tsunami verilerinin takibi
-- **🏢 Kurumsal Yapı**: Büyük organizasyonlar için ölçeklenebilir mimari
-- **🤝 Koordinasyon**: Birimler arası etkili iletişim ve koordinasyon
-- **📊 Veri Analizi**: Kapsamlı raporlama ve analiz araçları
+- ** Küresel Kapsam**: Dünya genelinde afet verilerinin takibi ve yönetimi
+- ** Gerçek Zamanlı İzleme**: Canlı deprem, yangın ve tsunami verilerinin takibi
+- ** Kurumsal Yapı**: Büyük organizasyonlar için ölçeklenebilir mimari
+- ** Koordinasyon**: Birimler arası etkili iletişim ve koordinasyon
+- ** Veri Analizi**: Kapsamlı raporlama ve analiz araçları
 
-## 🚀 Öne Çıkan Özellikler
+##  Öne Çıkan Özellikler
 
-- 🌐 **Küresel veri entegrasyonu**: NASA FIRMS, USGS, EMSC, Tsunami Alert servisleri
-- 🗺️ **Harita tabanlı görselleştirme**: Mapbox GL JS ve Leaflet destekli dashboard
-- 📦 **Depo ve envanter yönetimi**: Detaylı kategori, altyapı ve şart sistemleri
-- 🧰 **Ekipman ve envanter takibi**: Marka, model, seri numarası ve bakım kayıtları ile izleme
-- 🏕️ **Konteyner ve çadır kent yönetimi**: Barınma alanları için altyapı ve lojistik desteği
-- 👥 **Personel ve gönüllü yönetimi**: Rol bazlı atama, iletişim ve görev eşleştirme
-- 🗂️ **Görev planlama ve yönetimi**: Acil durum operasyonlarının zamanlaması ve takibi
-- 🧭 **Bölge yönetimi**: Hiyerarşik coğrafi yapı, acil durum seviyelerine göre renkli harita kaplamaları
-- 📋 **Log yönetimi**: Sistem işlemlerinin denetimi ve hata takibi
-- 📊 **Raporlama araçları**: Veri analizine dayalı görsel ve metinsel çıktılar
-- ⚙️ **Ayarlar modülü**: Sistem yapılandırması ve kullanıcı tercihleri yönetimi
-- 🔐 **Güvenlik yapısı**: Rol ve yetki tabanlı erişim kontrolü (RBAC)
-- 📊 **PostGIS ile coğrafi veri analizi**: 31+ tablo ve gelişmiş sorgu desteği
-- 🧠 **Akıllı önbellekleme sistemi**: JSON dosya tabanlı hızlı veri erişimi
+-  **Küresel veri entegrasyonu**: NASA FIRMS, USGS, EMSC, Tsunami Alert servisleri
+-  **Harita tabanlı görselleştirme**: Mapbox GL JS ve Leaflet destekli dashboard
+-  **Depo ve envanter yönetimi**: Detaylı kategori, altyapı ve şart sistemleri
+-  **Ekipman ve envanter takibi**: Marka, model, seri numarası ve bakım kayıtları ile izleme
+-  **Konteyner ve çadır kent yönetimi**: Barınma alanları için altyapı ve lojistik desteği
+-  **Personel ve gönüllü yönetimi**: Rol bazlı atama, iletişim ve görev eşleştirme
+-  **Görev planlama ve yönetimi**: Acil durum operasyonlarının zamanlaması ve takibi
+-  **Bölge yönetimi**: Hiyerarşik coğrafi yapı, acil durum seviyelerine göre renkli harita kaplamaları
+-  **Log yönetimi**: Sistem işlemlerinin denetimi ve hata takibi
+-  **Raporlama araçları**: Veri analizine dayalı görsel ve metinsel çıktılar
+-  **Ayarlar modülü**: Sistem yapılandırması ve kullanıcı tercihleri yönetimi
+-  **Güvenlik yapısı**: Rol ve yetki tabanlı erişim kontrolü (RBAC)
+-  **PostGIS ile coğrafi veri analizi**: 31+ tablo ve gelişmiş sorgu desteği
+-  **Akıllı önbellekleme sistemi**: JSON dosya tabanlı hızlı veri erişimi
 
-## 🏗️ Sistem Mimarisi
+##  Sistem Mimarisi
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
@@ -74,14 +74,14 @@ Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" ta
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-### 🔄 Veri Akışı
+###  Veri Akışı
 1. **Dış API'ler** → Cron servisleri → Cache → Veritabanı
 2. **Kullanıcı İstekleri** → Next.js API Routes → Prisma ORM → PostgreSQL
 3. **Gerçek Zamanlı Güncellemeler** → WebSocket → Frontend Bileşenleri
 
-## 📸 Sistem Modülleri ve Ekran Görüntüleri
+##  Sistem Modülleri ve Ekran Görüntüleri
 
-### 🎯 Ana Dashboard
+###  Ana Dashboard
 Ana kontrol paneli, sistem genelindeki kritik verilerin gerçek zamanlı görüntülenmesi için tasarlanmıştır.
 
 ![Ana Dashboard](assets/screenshots/dashboard-overview.png)
@@ -93,7 +93,7 @@ Ana kontrol paneli, sistem genelindeki kritik verilerin gerçek zamanlı görün
 - Bildirim merkezi
 - Sistem durumu göstergeleri
 
-### 🗺️ Harita Modülü
+###  Harita Modülü
 Küresel afet verilerinin görselleştirildiği interaktif harita sistemi.
 
 ![Harita Modülü](assets/screenshots/map-module.png)
@@ -105,7 +105,7 @@ Küresel afet verilerinin görselleştirildiği interaktif harita sistemi.
 - Coğrafi filtreleme ve arama
 - Popup detay bilgileri
 
-### 🏢 Bölge Yönetimi
+###  Bölge Yönetimi
 Hiyerarşik coğrafi yapının yönetildiği ve acil durum seviyelerinin belirlendiği modül.
 
 ![Bölge Yönetimi](assets/screenshots/regions-management.png)
@@ -117,7 +117,7 @@ Hiyerarşik coğrafi yapının yönetildiği ve acil durum seviyelerinin belirle
 - Coğrafi koordinat yönetimi
 - Bölge bazlı istatistikler
 
-### 👥 Personel Yönetimi
+###  Personel Yönetimi
 Kurumsal personel yapısının organize edildiği ve görev atamalarının yapıldığı sistem.
 
 ![Personel Yönetimi](assets/screenshots/personnel-management.png)
@@ -129,7 +129,7 @@ Kurumsal personel yapısının organize edildiği ve görev atamalarının yapı
 - Görev geçmişi takibi
 - Performans değerlendirme
 
-### 🏠 Depo Yönetimi
+### Depo Yönetimi
 Afet malzemelerinin depolanması ve dağıtımının koordine edildiği kapsamlı envanter sistemi.
 
 ![Depo Yönetimi](assets/screenshots/warehouse-management.png)
@@ -142,7 +142,7 @@ Afet malzemelerinin depolanması ve dağıtımının koordine edildiği kapsaml�
 - Araç filosu takibi
 - Detaylı raporlama
 
-### 🛠️ Ekipman Yönetimi
+###  Ekipman Yönetimi
 Acil durum ekipmanlarının takibi, bakımı ve dağıtımının yönetildiği modül.
 
 ![Ekipman Yönetimi](assets/screenshots/equipment-management.png)
@@ -154,7 +154,7 @@ Acil durum ekipmanlarının takibi, bakımı ve dağıtımının yönetildiği m
 - Kullanım durumu izleme
 - Rezervasyon sistemi
 
-### 📦 Envanter Yönetimi
+###  Envanter Yönetimi
 Genel malzeme ve kaynak envanterinin detaylı takip edildiği sistem.
 
 ![Envanter Yönetimi](assets/screenshots/inventory-management.png)
@@ -166,7 +166,7 @@ Genel malzeme ve kaynak envanterinin detaylı takip edildiği sistem.
 - Minimum stok limitleri
 - Tedarikçi bilgileri
 
-### 🏕️ Konteyner/Çadır Kent Yönetimi
+###  Konteyner/Çadır Kent Yönetimi
 Geçici barınma alanlarının kurulumu ve yönetiminin koordine edildiği kapsamlı sistem.
 
 ![Konteyner Kent Yönetimi](assets/screenshots/container-camps.png)
@@ -179,7 +179,7 @@ Geçici barınma alanlarının kurulumu ve yönetiminin koordine edildiği kapsa
 - Kent personeli yönetimi
 - Lojistik ve malzeme dağıtımı
 
-### 📋 Görev Yönetimi
+###  Görev Yönetimi
 Acil durum operasyonlarının planlanması ve takip edildiği görev koordinasyon sistemi.
 
 ![Görev Yönetimi](assets/screenshots/task-management.png)
@@ -192,7 +192,7 @@ Acil durum operasyonlarının planlanması ve takip edildiği görev koordinasyo
 - Görev bağımlılıkları
 - Tamamlanma raporları
 
-### 🔔 Bildirim Merkezi
+###  Bildirim Merkezi
 Sistem genelindeki önemli olayların ve uyarıların yönetildiği merkezi bildirim sistemi.
 
 ![Bildirim Merkezi](assets/screenshots/notifications.png)
@@ -204,7 +204,7 @@ Sistem genelindeki önemli olayların ve uyarıların yönetildiği merkezi bild
 - Bildirim geçmişi
 - Kişiselleştirilmiş uyarılar
 
-### 💝 Gönüllü Yönetimi
+###  Gönüllü Yönetimi
 Gönüllü koordinasyonu ve eğitim programlarının yönetildiği sistem.
 
 ![Gönüllü Yönetimi](assets/screenshots/volunteers-management.png)
@@ -217,7 +217,7 @@ Gönüllü koordinasyonu ve eğitim programlarının yönetildiği sistem.
 - Gönüllü mağazası
 - Grup organizasyonu
 
-### 📊 Raporlama Sistemi
+###  Raporlama Sistemi
 Sistem verilerinin analiz edilip raporlandığı kapsamlı raporlama modülü.
 
 ![Raporlama Sistemi](assets/screenshots/reports-module.png)
@@ -230,7 +230,7 @@ Sistem verilerinin analiz edilip raporlandığı kapsamlı raporlama modülü.
 - İstatistiksel analizler
 - Performans metrikleri
 
-### 🗂️ Planlama Modülü
+###  Planlama Modülü
 Afet öncesi hazırlık ve müdahale planlarının oluşturulduğu stratejik planlama sistemi.
 
 ![Planlama Modülü](assets/screenshots/planning-module.png)
@@ -243,7 +243,7 @@ Afet öncesi hazırlık ve müdahale planlarının oluşturulduğu stratejik pla
 - Plan versiyonlama
 - Simülasyon desteği
 
-### 📋 Log Yönetimi
+###  Log Yönetimi
 Sistem işlemlerinin kaydedildiği ve denetlendiği log takip sistemi.
 
 ![Log Yönetimi](assets/screenshots/logging-module.png)
@@ -256,7 +256,7 @@ Sistem işlemlerinin kaydedildiği ve denetlendiği log takip sistemi.
 - Performans metrikleri
 - Log filtreleme ve arama
 
-### ⚙️ Sistem Ayarları
+###  Sistem Ayarları
 Sistem yapılandırması ve kullanıcı tercihlerinin yönetildiği ayarlar modülü.
 
 ![Sistem Ayarları](assets/screenshots/settings-module.png)
@@ -269,7 +269,7 @@ Sistem yapılandırması ve kullanıcı tercihlerinin yönetildiği ayarlar mod�
 - Yedekleme yapılandırması
 - API konfigürasyonu
 
-### 👤 Profil Yönetimi
+###  Profil Yönetimi
 Kullanıcı hesap bilgilerinin ve kişisel tercihlerinin yönetildiği profil sistemi.
 
 ![Profil Yönetimi](assets/screenshots/profile-management.png)
@@ -282,7 +282,7 @@ Kullanıcı hesap bilgilerinin ve kişisel tercihlerinin yönetildiği profil si
 - Güvenlik ayarları
 - Hesap geçmişi
 
-## 📦 Kurulum
+##  Kurulum
 
 ### Gereksinimler
 
@@ -322,7 +322,7 @@ NEXTAUTH_SECRET="your-secret-key"
 MAPBOX_ACCESS_TOKEN="your-mapbox-token"
 ```
 
-## 🧪 Teknoloji Yığını
+##  Teknoloji Yığını
 
 | Katman            | Teknoloji               |
 |-------------------|-------------------------|
@@ -335,7 +335,7 @@ MAPBOX_ACCESS_TOKEN="your-mapbox-token"
 | UI Framework      | Ant Design              |
 | Stil              | Tailwind CSS            |
 
-## 🌐 API Endpoint'leri
+##  API Endpoint'leri
 
 - `/api/earthquakes`: Deprem verisi
 - `/api/fires/all`: Yangın verisi
@@ -349,7 +349,7 @@ MAPBOX_ACCESS_TOKEN="your-mapbox-token"
 - `/api/warehouse`: Depo yönetimi
 - `/api/tasks`: Görev yönetimi
 
-## 🗄️ Veritabanı Şeması
+##  Veritabanı Şeması
 
 Sistem 31+ tablo ile kapsamlı bir veri modeli kullanmaktadır:
 
@@ -368,12 +368,12 @@ Sistem 31+ tablo ile kapsamlı bir veri modeli kullanmaktadır:
 - `coordinates`: Koordinat verileri
 
 ### Veri İstatistikleri
-- **📍 Toplam Coğrafi Kayıt**: 9,808
-- **🌍 Ülke Sayısı**: 95
-- **🏙️ Şehir Sayısı**: 8,740
-- **🏘️ İlçe Sayısı**: 973
+- ** Toplam Coğrafi Kayıt**: 9,808
+- ** Ülke Sayısı**: 95
+- ** Şehir Sayısı**: 8,740
+- ** İlçe Sayısı**: 973
 
-## 🔐 Güvenlik ve Roller
+##  Güvenlik ve Roller
 
 Sistem rol bazlı erişim kontrolü (RBAC) kullanmaktadır:
 
@@ -383,7 +383,7 @@ Sistem rol bazlı erişim kontrolü (RBAC) kullanmaktadır:
 - **STAFF**: Operasyonel personel
 - **VOLUNTEER**: Gönüllü kullanıcılar
 
-## 🚀 Geliştirme Süreci
+##  Geliştirme Süreci
 
 ### Kod Standardları
 - TypeScript kullanımı zorunlu
@@ -397,7 +397,7 @@ Sistem rol bazlı erişim kontrolü (RBAC) kullanmaktadır:
 - E2E testler (Playwright)
 - API testleri
 
-## 📈 Roadmap
+##  Roadmap
 
 ### v2.0 Hedefleri
 - [ ] Mobil uygulama geliştirme
@@ -413,7 +413,7 @@ Sistem rol bazlı erişim kontrolü (RBAC) kullanmaktadır:
 - [x] PDF raporlama sistemi
 - [x] Bildirim merkezi
 
-## 🤝 Katkı Sağlama
+##  Katkı Sağlama
 
 Katkı sunmak için şu adımları izleyin:
 
@@ -441,7 +441,7 @@ Detaylı lisans metinleri için:
 - [Apache 2.0 License](LICENSE-APACHE)
 - [BSD 3-Clause License](LICENSE-BSD)
 
-## 📞 İletişim
+##  İletişim
 
 Proje hakkında sorularınız için GitHub Issues bölümünden veya doğrudan iletişime geçebilirsiniz:
 
@@ -449,17 +449,17 @@ Proje hakkında sorularınız için GitHub Issues bölümünden veya doğrudan i
 - **E-posta**: arslantas.m@gmail.com
 - **Telefon**: +90 542 559 69 46
 
-## 🌟 Teşekkürler
+##  Teşekkürler
 
-Küresel düzeyde insanların yararına olacak bu projede fikir, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 🙏
+Küresel düzeyde insanların yararına olacak bu projede fikir, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 
 
 ---
 
 <div align="center">
 
-**🌍 Acil Durum Yönetim ve Koordinasyon Sistemi** ile dünya çapında afet yönetiminde teknolojik dönüşüm
+** Acil Durum Yönetim ve Koordinasyon Sistemi** ile dünya çapında afet yönetiminde teknolojik dönüşüm
 
-[⭐ Star](https://github.com/ArslantasM/emergency-management) | [🐛 Bug Report](https://github.com/ArslantasM/emergency-management/issues) | [💡 Feature Request](https://github.com/ArslantasM/emergency-management/issues)
+[lh Star](https://github.com/ArslantasM/emergency-management) | [ Bug Report](https://github.com/ArslantasM/emergency-management/issues) | [ Feature Request](https://github.com/ArslantasM/emergency-management/issues)
 
 </div>
 
