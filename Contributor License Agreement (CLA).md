@@ -1,6 +1,6 @@
 Contributor License Agreement (CLA)
 
-Bu belge, [Proje Adı] projesine katkı sağlayan bireylerin, katkılarının lisanslanmasıyla ilgili haklarını ve sorumluluklarını tanımlar.
+Bu belge, **"Acil Durum Yönetim ve Koordinasyon Sistemi"** projesine katkı sağlayan bireylerin, katkılarının lisanslanmasıyla ilgili haklarını ve sorumluluklarını tanımlar.
 
 1. Katkı Tanımı:
    Katkı, kaynak kodu, dokümantasyon, grafik, veri veya başka herhangi bir içerik olabilir.
