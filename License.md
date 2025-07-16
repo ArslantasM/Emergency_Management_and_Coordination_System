@@ -1,6 +1,7 @@
 Copyright (c) 2025 Mustafa Barış Arslantaş
 
 This project is licensed under the terms of both the Apache License 2.0 and the BSD 3-Clause License. You may choose either license to govern your use of this software.
+**Both licenses require that developer Mustafa Barış Arslantaş's copyright be protected and his name be associated with the project.**
 
 ---
 
