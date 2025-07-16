@@ -1,6 +1,6 @@
 # Acil Durum Yönetim ve Koordinasyon Sistemi (Emergency Management System)
 
-Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformu. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.
+Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformudur. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.
 
 ![Ana Dashboard](assets/screenshots/dashboard-main.png)
 
@@ -12,7 +12,7 @@ Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" ta
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
-## 📋 İçindekiler
+## İçindekiler
 
 - [ Proje Hakkında](#-proje-hakkında)
 - [ Öne Çıkan Özellikler](#-öne-çıkan-özellikler)
@@ -425,7 +425,7 @@ Katkı sunmak için şu adımları izleyin:
 
 Daha fazla bilgi için `CONTRIBUTING.md` ve `CLA.md` dosyalarını inceleyin.
 
-## 📄 Lisans
+##  Lisans
 
 Bu yazılım **Apache 2.0** ve **BSD 3-Clause** lisansları altında sunulmaktadır. Kullanıcılar diledikleri lisansı seçerek kullanabilir.
 
