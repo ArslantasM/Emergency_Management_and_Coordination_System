@@ -1,0 +1,526 @@
+"use client";
+
+import React, { useState, useEffect, useCallback } from "react";
+import { Card, Spin, Alert, Button, Space, Typography, Badge, List, Tag } from "antd";
+import { ReloadOutlined } from "@ant-design/icons";
+import StableMap from "./StableMap";
+
+const { Text } = Typography;
+
+interface EarthquakeData {
+  id: string;
+  eventId: string;
+  source: string;
+  date: string;
+  latitude: number;
+  longitude: number;
+  depth: number;
+  magnitude: number;
+  type: string;
+  location: string;
+  tsunamiAlert: boolean;
+}
+
+interface FireData {
+  id: string;
+  source: string;
+  date: string;
+  latitude: number;
+  longitude: number;
+  brightness?: number;
+  confidence?: number;
+  frp?: number;
+  satellite?: string;
+  instrument?: string;
+  location?: string;
+}
+
+interface DashboardMapProps {
+  earthquakes?: EarthquakeData[];
+  tsunamis?: any[];
+  fires?: FireData[];
+  loading?: boolean;
+  wsConnected?: boolean;
+}
+
+const DashboardMap: React.FC<DashboardMapProps> = ({ 
+  earthquakes = [], 
+  tsunamis = [], 
+  fires = [],
+  loading = false,
+  wsConnected = false 
+}) => {
+  const [isClient, setIsClient] = useState(false);
+  const [liveEarthquakes, setLiveEarthquakes] = useState<EarthquakeData[]>([]);
+  const [liveFires, setLiveFires] = useState<FireData[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [lastUpdate, setLastUpdate] = useState<Date | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchLiveData = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      console.log('🌍 Canlı deprem verileri alınıyor...');
+      
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+      
+      try {
+        const earthquakeResponse = await fetch('/api/earthquakes', {
+          signal: controller.signal,
+          headers: { 'Cache-Control': 'no-cache' }
+        });
+        
+        clearTimeout(timeoutId);
+        
+        if (!earthquakeResponse.ok) {
+          throw new Error(`HTTP ${earthquakeResponse.status}: Deprem verileri alınamadı`);
+        }
+        
+        const earthquakeGeoJSON = await earthquakeResponse.json();
+        
+        if (!earthquakeGeoJSON.features || !Array.isArray(earthquakeGeoJSON.features)) {
+          throw new Error('Geçersiz GeoJSON formatı');
+        }
+        
+        const earthquakeData: EarthquakeData[] = earthquakeGeoJSON.features.map((feature: any) => ({
+          id: feature.properties.id,
+          eventId: feature.properties.eventId,
+          source: feature.properties.source,
+          date: feature.properties.date,
+          latitude: feature.geometry.coordinates[1],
+          longitude: feature.geometry.coordinates[0],
+          depth: feature.properties.depth,
+          magnitude: feature.properties.magnitude,
+          type: feature.properties.type,
+          location: feature.properties.location,
+          tsunamiAlert: feature.properties.tsunamiAlert
+        }));
+        
+        setLiveEarthquakes(earthquakeData);
+        setLastUpdate(new Date());
+        
+        console.log(`✅ ${earthquakeData.length} deprem verisi yüklendi`);
+        
+      } catch (fetchError: any) {
+        if (fetchError.name === 'AbortError') {
+          throw new Error('API çağrısı zaman aşımına uğradı (10 saniye)');
+        }
+        throw fetchError;
+      }
+      
+      try {
+        const fireController = new AbortController();
+        const fireTimeoutId = setTimeout(() => fireController.abort(), 8000);
+        
+        const fireResponse = await fetch('/api/fires', {
+          signal: fireController.signal,
+          headers: { 'Cache-Control': 'no-cache' }
+        });
+        
+        clearTimeout(fireTimeoutId);
+        
+        if (fireResponse.ok) {
+          const fireGeoJSON = await fireResponse.json();
+          
+          if (fireGeoJSON.features && Array.isArray(fireGeoJSON.features)) {
+            const fireData: FireData[] = fireGeoJSON.features.map((feature: any) => ({
+              id: feature.properties.id,
+              source: feature.properties.source,
+              date: feature.properties.date,
+              latitude: feature.geometry.coordinates[1],
+              longitude: feature.geometry.coordinates[0],
+              brightness: feature.properties.brightness,
+              confidence: feature.properties.confidence,
+              frp: feature.properties.frp,
+              satellite: feature.properties.satellite,
+              instrument: feature.properties.instrument,
+              location: feature.properties.location
+            }));
+            
+            setLiveFires(fireData);
+            console.log(`🔥 ${fireData.length} yangın verisi yüklendi`);
+          }
+        } else {
+          console.warn('Yangın API yanıt vermedi:', fireResponse.status);
+        }
+      } catch (fireError: any) {
+        if (fireError.name === 'AbortError') {
+          console.log('Yangın API zaman aşımına uğradı, devam ediliyor...');
+        } else {
+          console.log('Yangın verileri alınamadı:', fireError.message);
+        }
+      }
+      
+    } catch (err: any) {
+      console.error('Canlı veri alma hatası:', err);
+      setError(err.message || 'Canlı veriler alınırken bilinmeyen bir hata oluştu');
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    setIsClient(true);
+    fetchLiveData();
+    
+    const interval = setInterval(fetchLiveData, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, [fetchLiveData]);
+
+  const allMarkers = [
+    ...liveEarthquakes.map(eq => ({
+      id: eq.id,
+      lat: eq.latitude,
+      lng: eq.longitude,
+      type: "earthquake" as const,
+      title: `${eq.magnitude} büyüklüğünde deprem`,
+      description: `${eq.location} - ${new Date(eq.date).toLocaleDateString("tr-TR")}`,
+      color: eq.magnitude >= 6.0 ? "#ff0000" : eq.magnitude >= 5.0 ? "#ff4500" : eq.magnitude >= 4.0 ? "#ff8c00" : "#ffd700",
+      magnitude: eq.magnitude,
+      data: eq
+    })),
+    ...earthquakes.map(eq => ({
+      id: eq.id,
+      lat: eq.latitude,
+      lng: eq.longitude,
+      type: "earthquake" as const,
+      title: `${eq.magnitude} büyüklüğünde deprem`,
+      description: `${eq.location} - ${new Date(eq.date).toLocaleDateString("tr-TR")}`,
+      color: eq.magnitude >= 6.0 ? "#ff0000" : eq.magnitude >= 5.0 ? "#ff4500" : eq.magnitude >= 4.0 ? "#ff8c00" : "#ffd700",
+      magnitude: eq.magnitude,
+      data: eq
+    })),
+    ...tsunamis.map(ts => ({
+      id: ts.id,
+      lat: ts.latitude,
+      lng: ts.longitude,
+      type: "tsunami" as const,
+      title: "Tsunami Uyarısı",
+      description: `${ts.location || 'Bilinmeyen konum'} - ${ts.status || 'Aktif'}`,
+      color: "#ff0000",
+      data: ts
+    })),
+    ...liveFires.map(fire => ({
+      id: fire.id,
+      lat: fire.latitude,
+      lng: fire.longitude,
+      type: "fire" as const,
+      title: "Yangın Tespiti",
+      description: `${fire.location || 'Bilinmeyen konum'} - ${new Date(fire.date).toLocaleDateString("tr-TR")}`,
+      color: "#ff6600",
+      data: fire
+    })),
+    ...fires.map(fire => ({
+      id: fire.id,
+      lat: fire.latitude,
+      lng: fire.longitude,
+      type: "fire" as const,
+      title: "Yangın Tespiti",
+      description: `${fire.location || 'Bilinmeyen konum'} - ${new Date(fire.date).toLocaleDateString("tr-TR")}`,
+      color: "#ff6600",
+      data: fire
+    }))
+  ];
+
+  const allEvents = [
+    ...liveEarthquakes.map(eq => ({
+      id: eq.id,
+      type: 'earthquake' as const,
+      title: `${eq.magnitude} büyüklüğünde deprem`,
+      location: eq.location,
+      date: eq.date,
+      source: eq.source,
+      data: eq,
+      severity: eq.magnitude >= 6.0 ? 'critical' : eq.magnitude >= 5.0 ? 'high' : eq.magnitude >= 4.0 ? 'medium' : 'low'
+    })),
+    ...earthquakes.map(eq => ({
+      id: eq.id,
+      type: 'earthquake' as const,
+      title: `${eq.magnitude} büyüklüğünde deprem`,
+      location: eq.location,
+      date: eq.date,
+      source: eq.source,
+      data: eq,
+      severity: eq.magnitude >= 6.0 ? 'critical' : eq.magnitude >= 5.0 ? 'high' : eq.magnitude >= 4.0 ? 'medium' : 'low'
+    })),
+    ...liveFires.map(fire => ({
+      id: fire.id,
+      type: 'fire' as const,
+      title: 'Yangın Tespiti',
+      location: fire.location || 'Bilinmeyen konum',
+      date: fire.date,
+      source: fire.source,
+      data: fire,
+      severity: fire.confidence && fire.confidence >= 90 ? 'high' : fire.confidence && fire.confidence >= 70 ? 'medium' : 'low'
+    })),
+    ...fires.map(fire => ({
+      id: fire.id,
+      type: 'fire' as const,
+      title: 'Yangın Tespiti',
+      location: fire.location || 'Bilinmeyen konum',
+      date: fire.date,
+      source: fire.source,
+      data: fire,
+      severity: 'medium'
+    })),
+    ...tsunamis.map(ts => ({
+      id: ts.id,
+      type: 'tsunami' as const,
+      title: 'Tsunami Uyarısı',
+      location: ts.location || 'Bilinmeyen konum',
+      date: ts.date,
+      source: ts.source || 'AFAD',
+      data: ts,
+      severity: 'critical'
+    }))
+  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  if (!isClient) {
+    return (
+      <Card title="🗺️ Canlı Acil Durum Haritası" style={{ minHeight: "600px" }}>
+        <div style={{ height: "350px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <Spin size="large" />
+        </div>
+      </Card>
+    );
+  }
+
+  const getStatusBadge = () => {
+    if (liveEarthquakes.length > 0) {
+      return <Badge status="processing" text="Canlı Veri" />;
+    } else if (allMarkers.length > 0) {
+      return <Badge status="warning" text="Demo Veri" />;
+    } else {
+      return <Badge status="default" text="Veri Yok" />;
+    }
+  };
+
+  const getSeverityColor = (severity: string) => {
+    switch (severity) {
+      case 'critical': return '#e74c3c';
+      case 'high': return '#e67e22';
+      case 'medium': return '#f39c12';
+      case 'low': return '#27ae60';
+      default: return '#95a5a6';
+    }
+  };
+
+  const getSeverityText = (severity: string) => {
+    switch (severity) {
+      case 'critical': return 'KRİTİK';
+      case 'high': return 'YÜKSEK';
+      case 'medium': return 'ORTA';
+      case 'low': return 'DÜŞÜK';
+      default: return 'BELİRSİZ';
+    }
+  };
+
+  const getEventIcon = (type: string) => {
+    switch (type) {
+      case 'earthquake': return <span style={{ fontSize: '16px' }}>🏔️</span>;
+      case 'fire': return <span style={{ fontSize: '16px' }}>🔥</span>;
+      case 'tsunami': return <span style={{ fontSize: '16px' }}>🌊</span>;
+      default: return <span style={{ fontSize: '16px' }}>ℹ️</span>;
+    }
+  };
+
+  return (
+    <Card 
+      title={
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <span>🗺️ Canlı Acil Durum Haritası</span>
+          <Space>
+            {getStatusBadge()}
+            <Button 
+              type="text" 
+              icon={<ReloadOutlined spin={isLoading} />}
+              onClick={fetchLiveData}
+              loading={isLoading}
+              size="small"
+            >
+              🔄 Yenile
+            </Button>
+          </Space>
+        </div>
+      }
+      style={{ minHeight: "600px" }}
+    >
+      {error && (
+        <Alert
+          message="Veri Hatası"
+          description={error}
+          type="warning"
+          showIcon
+          style={{ marginBottom: 16 }}
+          action={
+            <Button size="small" onClick={fetchLiveData}>
+              Tekrar Dene
+            </Button>
+          }
+        />
+      )}
+      
+      <div style={{ position: 'relative', marginBottom: 16 }}>
+        <div style={{
+          position: 'absolute',
+          top: 10,
+          right: 10,
+          zIndex: 1000,
+          background: 'rgba(255, 255, 255, 0.95)',
+          padding: '12px',
+          borderRadius: '8px',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+          minWidth: '220px',
+          backdropFilter: 'blur(10px)'
+        }}>
+          <div style={{ marginBottom: 8 }}>
+            <Text strong style={{ fontSize: '13px', color: '#1890ff' }}>📊 Harita Göstergesi</Text>
+          </div>
+          <Space direction="vertical" size="small" style={{ width: '100%' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Space size="small">
+                <span style={{ fontSize: '14px' }}>🔴</span>
+                <Text style={{ fontSize: '11px', fontWeight: '500' }}>Büyük Deprem (≥6.0)</Text>
+              </Space>
+              <Text style={{ fontSize: '11px', color: '#666', fontWeight: 'bold' }}>
+                {allMarkers.filter(m => m.type === 'earthquake' && m.magnitude && m.magnitude >= 6.0).length}
+              </Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Space size="small">
+                <span style={{ fontSize: '14px' }}>🟠</span>
+                <Text style={{ fontSize: '11px', fontWeight: '500' }}>Orta Deprem (4.0-5.9)</Text>
+              </Space>
+              <Text style={{ fontSize: '11px', color: '#666', fontWeight: 'bold' }}>
+                {allMarkers.filter(m => m.type === 'earthquake' && m.magnitude && m.magnitude >= 4.0 && m.magnitude < 6.0).length}
+              </Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Space size="small">
+                <span style={{ fontSize: '14px' }}>🟡</span>
+                <Text style={{ fontSize: '11px', fontWeight: '500' }}>Küçük Deprem (<4.0)</Text>
+              </Space>
+              <Text style={{ fontSize: '11px', color: '#666', fontWeight: 'bold' }}>
+                {allMarkers.filter(m => m.type === 'earthquake' && m.magnitude && m.magnitude < 4.0).length}
+              </Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Space size="small">
+                <span style={{ fontSize: '14px' }}>🔥</span>
+                <Text style={{ fontSize: '11px', fontWeight: '500' }}>Yangın Tespiti</Text>
+              </Space>
+              <Text style={{ fontSize: '11px', color: '#666', fontWeight: 'bold' }}>
+                {allMarkers.filter(m => m.type === 'fire').length}
+              </Text>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <Space size="small">
+                <span style={{ fontSize: '14px' }}>🌊</span>
+                <Text style={{ fontSize: '11px', fontWeight: '500' }}>Tsunami Uyarısı</Text>
+              </Space>
+              <Text style={{ fontSize: '11px', color: '#666', fontWeight: 'bold' }}>
+                {allMarkers.filter(m => m.type === 'tsunami').length}
+              </Text>
+            </div>
+          </Space>
+          {lastUpdate && (
+            <div style={{ marginTop: 10, paddingTop: 8, borderTop: '1px solid #e8e8e8' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Text style={{ fontSize: '10px', color: '#666' }}>🕒 Son güncelleme</Text>
+                <Text style={{ fontSize: '10px', color: '#1890ff', fontWeight: 'bold' }}>
+                  {lastUpdate.toLocaleTimeString('tr-TR')}
+                </Text>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <StableMap 
+          key={`dashboard-map-${lastUpdate?.getTime() || Date.now()}`}
+          markers={allMarkers}
+          center={[39.9334, 32.8597]}
+          zoom={6}
+          height="400px"
+        />
+      </div>
+      
+      <div style={{ marginTop: 16 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+          <Text strong>📋 Son Olaylar</Text>
+          <Text type="secondary" style={{ fontSize: '12px' }}>📊 Toplam {allEvents.length} olay</Text>
+        </div>
+        
+        <div style={{ 
+          maxHeight: '200px', 
+          overflowY: 'auto',
+          border: '1px solid #f0f0f0',
+          borderRadius: '6px',
+          backgroundColor: '#fafafa'
+        }}>
+          <List
+            size="small"
+            dataSource={allEvents}
+            renderItem={(event) => (
+              <List.Item style={{ 
+                padding: '8px 12px',
+                borderBottom: '1px solid #f0f0f0',
+                backgroundColor: '#fff',
+                margin: '2px',
+                borderRadius: '4px'
+              }}>
+                <div style={{ width: '100%' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div style={{ flex: 1 }}>
+                      <Space size="small">
+                        {getEventIcon(event.type)}
+                        <Text strong style={{ fontSize: '13px' }}>{event.title}</Text>
+                        <Tag 
+                          color={getSeverityColor(event.severity)}
+                          style={{ fontSize: '10px', padding: '0 4px', margin: 0 }}
+                        >
+                          {getSeverityText(event.severity)}
+                        </Tag>
+                      </Space>
+                      <div style={{ marginTop: 4 }}>
+                        <Text style={{ fontSize: '11px', color: '#666' }}>📍 {event.location}</Text>
+                      </div>
+                      <div style={{ marginTop: 2 }}>
+                        <Space size="small">
+                          <Text style={{ fontSize: '10px', color: '#999' }}>
+                            🕐 {new Date(event.date).toLocaleString('tr-TR')}
+                          </Text>
+                          <Text style={{ fontSize: '10px', color: '#999' }}>📡 {event.source}</Text>
+                          {event.type === 'earthquake' && event.data.magnitude && (
+                            <Text style={{ fontSize: '10px', color: '#999' }}>
+                              📊 M{event.data.magnitude} - 🏔️ {event.data.depth}km
+                            </Text>
+                          )}
+                          {event.type === 'fire' && event.data.confidence && (
+                            <Text style={{ fontSize: '10px', color: '#999' }}>
+                              🎯 %{event.data.confidence} güven
+                            </Text>
+                          )}
+                        </Space>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </List.Item>
+            )}
+          />
+        </div>
+      </div>
+      
+      {allMarkers.length === 0 && !isLoading && (
+        <div style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
+          <Text type="secondary">Gösterilecek acil durum verisi bulunmuyor</Text>
+        </div>
+      )}
+    </Card>
+  );
+};
+
+export default DashboardMap; 
