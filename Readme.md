@@ -1,4 +1,4 @@
-###Emergency Management and Coordination System
+#Emergency Management and Coordination System
 
 The Emergency Management and Coordination application is a complete, end-to-end, enterprise-class disaster management application. Developed with PostgreSQL , PostGIS , Next.js, and Python Flask , it's an open-source coordination platform that collects and visualizes real-time disaster data. It aims to streamline disaster management by tracking global earthquake, fire, and tsunami data. Designed with an enterprise-level architecture, the system aims to facilitate holistic disaster management and enhance coordination among units.
 
