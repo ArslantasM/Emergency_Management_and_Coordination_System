@@ -2,7 +2,7 @@
 
 The Emergency Management and Coordination application is a complete, end-to-end, enterprise-class disaster management application. Developed with PostgreSQL , PostGIS , Next.js, and Python Flask , it's an open-source coordination platform that collects and visualizes real-time disaster data. It aims to streamline disaster management by tracking global earthquake, fire, and tsunami data. Designed with an enterprise-level architecture, the system aims to facilitate holistic disaster management and enhance coordination among units.
 
-![ Main Dashboard]( assets / screenshots /dashboard-main.png)
+![Ana Dashboard](assets/screenshots/dashboard-main.png)
 
 [![Next.js]( https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js )]( https://nextjs.org/)
 [![ TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript )]( https://www.typescriptlang.org/)
@@ -19,9 +19,9 @@ The Emergency Management and Coordination application is a complete, end-to-end,
 - [ System Architecture]( #️-system-architecture)
 - [ System Modules and Screenshots]( #-system-modules-and-screenshots)
 - [ Setup ](#-setup)
-- [ Technology [Stack]( #-technology-stack)
+- [ [Technology Stack]( #-technology-stack)
 - [ API Endpoints ]( #-api-endpoints)
-- [ Database [Schema]( #️-database-schema)
+- [ [Database Schema]( #️-database-schema)
 - [ Security and Roles ]( #-security-and-roles)
 - [ Development Process]( #-development-process)
 - [ Roadmap ](#-roadmap)
@@ -36,10 +36,10 @@ The Emergency Management and Coordination System is a comprehensive, open-source
 ## # Main Goals
 
 - **Global Coverage**: Tracking and management of disaster data worldwide
-- ** Real-Time Monitoring **: Track live earthquake, fire and tsunami data
+- **Real-Time Monitoring**: Track live earthquake, fire and tsunami data
 - **Organizational Structure**: Scalable architecture for large organizations
-- ** Coordination **: Effective communication and coordination between units
-- ** Data Analysis **: Comprehensive reporting and analysis tools
+- **Coordination**: Effective communication and coordination between units
+- **Data Analysis**: Comprehensive reporting and analysis tools
 
 # # Featured Features
 
@@ -55,27 +55,27 @@ The Emergency Management and Coordination System is a comprehensive, open-source
 - **Reporting tools**: Visual and textual outputs based on data analysis
 - **Settings module**: System configuration and user preferences management
 - **Security structure**: Role and authority-based access control (RBAC)
-- ** Geographic data analysis with PostGIS **: 31+ tables and advanced query support
+- **Geographic data analysis with PostGIS**: 31+ tables and advanced query support
 - **Smart caching system**: Fast data access based on JSON files
 
 # # System Architecture
 
 ```
-┌────────────────┐ ┌──────────────────┐ ┌──────────────────┐
-│ Frontend │ │ Backend API │ │ Database │
-│ (Next.js) │ ◄ ── ► │ ( Flask )    │ ◄ ── ► │ ( PostgreSQL ) │
-│ │ │ │ │ + PostGIS │
-└────────────────┘ └───────────────────┘ └──────────────────────┘
-│ │ │
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Backend API   │    │   Veritabanı    │
+│   (Next.js)     │◄──►│   (Flask)       │◄──►│  (PostgreSQL)   │
+│                 │    │                 │    │   + PostGIS     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
          ▼                       ▼                       ▼
-┌────────────────┐ ┌──────────────────┐ ┌──────────────────┐
-│ Map Service │ │ External APIs │ │ Cache System │
-│ ( Mapbox / Leaflet )│ │ (NASA/USGS/ EMSC)│ │ (JSON) │
-└────────────────┘ └──────────────────┘ └─────────────────────┘
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│  Harita Servisi │    │  Dış API'ler    │    │  Cache Sistemi  │
+│ (Mapbox/Leaflet)│    │ (NASA/USGS/EMSC)│    │     (JSON)      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
 ## # Data Flow
-1. **External APIs ** → Cron services → Cache → Database
+1. **External APIs** → Cron services → Cache → Database
 2. **User Requests** → Next.js API Routes → Prisma ORM → PostgreSQL
 3. **Real-Time Updates** → WebSocket → Frontend Components
 
@@ -84,7 +84,7 @@ The Emergency Management and Coordination System is a comprehensive, open-source
 ## # Main Dashboard
 The main dashboard is designed for real-time viewing of critical system-wide data.
 
-![ Main Dashboard]( assets / screenshots /dashboard-overview.png)
+![ Main Dashboard]( assets/screenshots/dashboard-overview.png)
 
 ** Features:* *
 - Real-time disaster data (earthquake, fire, tsunami)
@@ -96,7 +96,7 @@ The main dashboard is designed for real-time viewing of critical system-wide dat
 ## # Map Module
 Interactive map system visualizing global disaster data.
 
-![ Map Module]( assets / screenshots /map-module.png)
+![ Map Module]( assets/screenshots/map-module.png)
 
 ** Features:* *
 - Mapbox GL JS and Leaflet integration
@@ -108,7 +108,7 @@ Interactive map system visualizing global disaster data.
 ## # Regional Management
 Module where the hierarchical geographical structure is managed and emergency levels are determined.
 
-![ Region Management]( assets / screenshots /regions-management.png)
+![ Region Management]( assets/screenshots/regions-management.png)
 
 ** Features:* *
 - Country, city, district hierarchy
@@ -120,7 +120,7 @@ Module where the hierarchical geographical structure is managed and emergency le
 ## # Personnel Management
 The system in which the corporate personnel structure is organized and job assignments are made.
 
-![ Personnel Management]( assets / screenshots /personnel-management.png)
+![ Personnel Management]( assets/screenshots/personnel-management.png)
 
 ** Features:* *
 - Role-based personnel records
@@ -132,7 +132,7 @@ The system in which the corporate personnel structure is organized and job assig
 ### Warehouse Management
 Comprehensive inventory system that coordinates the storage and distribution of disaster supplies.
 
-![ Warehouse Management]( assets / screenshots /warehouse-management.png)
+![ Warehouse Management]( assets/screenshots/warehouse-management.png)
 
 ** Features:* *
 - Multi-warehouse management
@@ -145,7 +145,7 @@ Comprehensive inventory system that coordinates the storage and distribution of 
 ## # Equipment Management
 Module where the tracking, maintenance and distribution of emergency equipment is managed.
 
-![ Equipment Management]( assets / screenshots /equipment-management.png)
+![ Equipment Management]( assets/screenshots/equipment-management.png)
 
 ** Features:* *
 - Equipment categories and subcategories
@@ -157,7 +157,7 @@ Module where the tracking, maintenance and distribution of emergency equipment i
 ## # Inventory Management
 A system that tracks general material and resource inventory in detail.
 
-![ Inventory Management]( assets / screenshots /inventory-management.png)
+![ Inventory Management]( assets/screenshots/inventory-management.png)
 
 ** Features:* *
 - Category-based inventory classification
@@ -169,7 +169,7 @@ A system that tracks general material and resource inventory in detail.
 ## # Container /Tent City Management
 A comprehensive system for coordinating the establishment and management of temporary shelters.
 
-![ Container City Management]( assets / screenshots / container-camps.png)
+![ Container City Management]( assets/screenshots/container-camps.png)
 
 ** Features:* *
 - Urban establishment and planning
@@ -182,7 +182,7 @@ A comprehensive system for coordinating the establishment and management of temp
 ## # Task Management
 Mission coordination system for planning and monitoring emergency operations.
 
-![ Task Management]( assets / screenshots /task-management.png)
+![ Task Management]( assets/screenshots/task-management.png)
 
 ** Features:* *
 - Creating and assigning tasks
@@ -195,7 +195,7 @@ Mission coordination system for planning and monitoring emergency operations.
 ## # Notification Center
 A central notification system where important system-wide events and alerts are managed.
 
-![ Notification Center]( assets / screenshots /notifications.png)
+![ Notification Center]( assets/screenshots/notifications.png)
 
 ** Features:* *
 - Real-time notifications
@@ -207,7 +207,7 @@ A central notification system where important system-wide events and alerts are 
 ## # Volunteer Management
 The system by which volunteer coordination and training programs are managed.
 
-![ Volunteer Management]( assets / screenshots /volunteers-management.png)
+![ Volunteer Management]( assets/screenshots/volunteers-management.png)
 
 ** Features:* *
 - Volunteer registration and profile management
@@ -220,7 +220,7 @@ The system by which volunteer coordination and training programs are managed.
 ## # Reporting System
 Comprehensive reporting module where system data is analyzed and reported.
 
-![ Reporting System]( assets / screenshots /reports-module.png)
+![ Reporting System]( assets/screenshots/reports-module.png)
 
 ** Features:* *
 - Customizable report templates
@@ -233,7 +233,7 @@ Comprehensive reporting module where system data is analyzed and reported.
 ## # Planning Module
 Strategic planning system in which pre-disaster preparedness and response plans are created.
 
-![ Planning Module]( assets / screenshots /planning-module.png)
+![ Planning Module]( assets/screenshots/planning-module.png)
 
 ** Features:* *
 - Scenario-based planning
@@ -246,7 +246,7 @@ Strategic planning system in which pre-disaster preparedness and response plans 
 ## # Log Management
 Log tracking system where system operations are recorded and audited.
 
-![ Log Management]( assets / screenshots /logging-module.png)
+![ Log Management]( assets/screenshots/logging-module.png)
 
 ** Features:* *
 - Detailed system logs
@@ -259,7 +259,7 @@ Log tracking system where system operations are recorded and audited.
 ## # System Settings
 Settings module where system configuration and user preferences are managed.
 
-![ System Settings]( assets / screenshots / settings-module.png)
+![ System Settings]( assets/screenshots/settings-module.png)
 
 ** Features:* *
 - User profile settings
@@ -272,7 +272,7 @@ Settings module where system configuration and user preferences are managed.
 ## # Profile Management
 Profile system where user account information and personal preferences are managed.
 
-![ Profile Management]( assets / screenshots /profile-management.png)
+![ Profile Management]( assets/screenshots/profile-management.png)
 
 ** Features:* *
 - Personal information update
