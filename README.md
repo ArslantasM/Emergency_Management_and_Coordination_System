@@ -14,20 +14,21 @@ The Emergency Management and Coordination application is a complete, end-to-end,
 
 ## Contents
 
-- [ Project About]( #-project-about)
-- [ Featured Features]( #-featured-features)
-- [ System Architecture]( #️-system-architecture)
-- [ System Modules and Screenshots]( #-system-modules-and-screenshots)
-- [ Setup ](#-setup)
-- [ [Technology Stack]( #-technology-stack)
-- [ API Endpoints ]( #-api-endpoints)
-- [ [Database Schema]( #️-database-schema)
-- [ Security and Roles ]( #-security-and-roles)
-- [ Development Process]( #-development-process)
-- [ Roadmap ](#-roadmap)
-- [ Contribution Providing]( #-contribution-providing)
-- [ License ](#-license)
-- [ Contact ](#-contact)
+- [Project About](#project-about)
+- [Featured Features](#featured-features)
+- [System Architecture](#️system-architecture)
+- [System Modules and Screenshots](#system-modules-and-screenshots)
+- [Setup](#setup)
+- [Technology Stack](#technology-stack)
+- [API Endpoints](#api-endpoints)
+- [Database Schema](#️database-schema)
+- [Security and Roles](#security-and-roles)
+- [Development Process](#development-process)
+- [Roadmap](#roadmap)
+- [Contribution Providing](#contribution-providing)
+- [License](#license)
+- [Contact](#contact)
+
 
 # # About the Project
 
@@ -86,7 +87,7 @@ The main dashboard is designed for real-time viewing of critical system-wide dat
 
 ![ Main Dashboard]( assets/screenshots/dashboard-overview.png)
 
-**Features:* *
+**Features:**
 - Real-time disaster data (earthquake, fire, tsunami)
 - Statistical summary cards
 - Quick access menu
@@ -98,7 +99,7 @@ Interactive map system visualizing global disaster data.
 
 ![ Map Module]( assets/screenshots/map-module.png)
 
-**Features:* *
+**Features:**
 - Mapbox GL JS and Leaflet integration
 - Real-time earthquake, fire and tsunami data
 - Layered map views
@@ -110,7 +111,7 @@ Module where the hierarchical geographical structure is managed and emergency le
 
 ![ Region Management]( assets/screenshots/regions-management.png)
 
-**Features:* *
+**Features:**
 - Country, city, district hierarchy
 - Emergency level assignment (CRITICAL, HIGH, MEDIUM, LOW)
 - Colorful map overlays
@@ -122,7 +123,7 @@ The system in which the corporate personnel structure is organized and job assig
 
 ![ Personnel Management]( assets/screenshots/personnel-management.png)
 
-**Features:* *
+**Features:**
 - Role-based personnel records
 - Department and position assignments
 - Contact information management
@@ -134,7 +135,7 @@ Comprehensive inventory system that coordinates the storage and distribution of 
 
 ![ Warehouse Management]( assets/screenshots/warehouse-management.png)
 
-**Features:* *
+**Features:**
 - Multi-warehouse management
 - Stock tracking and warning system
 - Transfer and transportation coordination
@@ -147,7 +148,7 @@ Module where the tracking, maintenance and distribution of emergency equipment i
 
 ![ Equipment Management]( assets/screenshots/equipment-management.png)
 
-**Features:* *
+**Features:**
 - Equipment categories and subcategories
 - Brand, model, serial number tracking
 - Maintenance planning and history
@@ -159,7 +160,7 @@ A system that tracks general material and resource inventory in detail.
 
 ![ Inventory Management]( assets/screenshots/inventory-management.png)
 
-**Features:* *
+**Features:**
 - Category-based inventory classification
 - Unit and quantity tracking
 - Expiration date warnings
@@ -171,7 +172,7 @@ A comprehensive system for coordinating the establishment and management of temp
 
 ![ Container City Management]( assets/screenshots/container-camps.png)
 
-**Features:* *
+**Features:**
 - Urban establishment and planning
 - Infrastructure management (water, electricity, sewerage)
 - Camp recording and tracking
@@ -184,7 +185,7 @@ Mission coordination system for planning and monitoring emergency operations.
 
 ![ Task Management]( assets/screenshots/task-management.png)
 
-**Features:* *
+**Features:**
 - Creating and assigning tasks
 - Priority level determination
 - Progress tracking
@@ -197,7 +198,7 @@ A central notification system where important system-wide events and alerts are 
 
 ![ Notification Center]( assets/screenshots/notifications.png)
 
-**Features:* *
+**Features:**
 - Real-time notifications
 - Priority-based classification
 - Automatic warning systems
@@ -209,7 +210,7 @@ The system by which volunteer coordination and training programs are managed.
 
 ![ Volunteer Management]( assets/screenshots/volunteers-management.png)
 
-**Features:* *
+**Features:**
 - Volunteer registration and profile management
 - Skill and certification tracking
 - Training modules and programs
@@ -222,7 +223,7 @@ Comprehensive reporting module where system data is analyzed and reported.
 
 ![ Reporting System]( assets/screenshots/reports-module.png)
 
-**Features:* *
+**Features:**
 - Customizable report templates
 - Graphical and visual analysis tools
 - PDF and Excel export
@@ -235,7 +236,7 @@ Strategic planning system in which pre-disaster preparedness and response plans 
 
 ![ Planning Module]( assets/screenshots/planning-module.png)
 
-**Features:* *
+**Features:**
 - Scenario-based planning
 - Resource allocation planning
 - Creating a timeline
@@ -248,7 +249,7 @@ Log tracking system where system operations are recorded and audited.
 
 ![ Log Management]( assets/screenshots/logging-module.png)
 
-**Features:* *
+**Features:**
 - Detailed system logs
 - User transaction history
 - Error tracking and analysis
@@ -261,7 +262,7 @@ Settings module where system configuration and user preferences are managed.
 
 ![ System Settings]( assets/screenshots/settings-module.png)
 
-**Features:* *
+**Features:**
 - User profile settings
 - System configuration
 - Notification preferences
@@ -274,7 +275,7 @@ Profile system where user account information and personal preferences are manag
 
 ![ Profile Management]( assets/screenshots/profile-management.png)
 
-**Features:* *
+**Features:**
 - Personal information update
 - Change password
 - Profile photo management
