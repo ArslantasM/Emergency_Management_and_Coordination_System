@@ -1,246 +1,193 @@
-# Contributor License Agreement (CLA) / Katkı Lisans Sözleşmesi / Mitwirkendenlizenzvereinbarung / Accord de licence du contributeur / Acordo de Licença do Contribuidor / Acuerdo de Licencia del Contribuyente
+# Contributor License Agreement (CLA)  
+# Katkı Lisans Sözleşmesi  
+# Mitwirkendenlizenzvereinbarung  
+# Accord de licence du contributeur  
+# Acordo de Licença do Contribuidor  
+# Acuerdo de Licencia del Contribuyente
 
-## English
+---
 
-This agreement regulates the rights and responsibilities of contributors to the open-source project “Emergency Management and Coordination System,” regarding licensing and usage of their contributions.
+## 🟦 English
 
-### Definition of Contribution
+**Purpose**  
+This agreement governs the rights and responsibilities of contributors to the “Emergency Management and Coordination System” open-source project.
 
-A contribution may be source code, documentation, graphics, datasets, test scenarios, training materials, or other content.
+**Contribution Definition**  
+May include source code, documentation, graphics, datasets, test scenarios, training materials, or other content.
 
-### Licensing
+**Licensing**  
+Contributor agrees to license the submission under Apache License 2.0 and BSD 3-Clause.
 
-Contributors agree to license their work under the Apache License 2.0 and BSD 3-Clause.
+**Copyright and Patent Rights**  
+Contributor affirms originality and licenses any related patent rights to the project.
 
-### Copyright and Patent
+**Usage Rights**  
+Project maintainers may use, modify, redistribute, and relicense the contribution.
 
-Contributors declare the work is their own and does not infringe on third-party rights. If any patent rights exist, they are licensed to the project.
+**Contributor’s Rights**  
+The contributor retains the right to reuse the work elsewhere.
 
-### Usage Rights
+**Attribution**  
+Contributor's name will be acknowledged where appropriate.
 
-Project maintainers may use, modify, distribute, and re-license the contribution within the project.
-
-### Contributor Rights
-
-Contributors retain the right to use the same content in other projects.
-
-### Attribution
-
-Contributor names will appear in contribution lists and be credited when appropriate.
-
-### Acceptance
-
-The contributor accepts the CLA by filling out the following:
-
+**Acceptance Form**  
 Full Name: __________________________  
 Email: _____________________________  
 Date: _____________________________  
 Signature: _________________________
 
-This agreement becomes valid upon signature.
-
 ---
 
-## Türkçe
+## 🇹🇷 Türkçe
 
-Bu sözleşme, “Acil Durum Yönetim ve Koordinasyon Sistemi” açık kaynak projesine katkı sunanların lisanslama ve kullanım konusundaki hak ve sorumluluklarını düzenler.
+**Amaç**  
+Bu sözleşme, “Acil Durum Yönetim ve Koordinasyon Sistemi” açık kaynak projesine katkıda bulunanların hak ve yükümlülüklerini düzenler.
 
-### Katkı Tanımı
+**Katkı Tanımı**  
+Katkı; kaynak kodu, dokümantasyon, grafik, veri seti, test senaryosu, eğitim materyali veya başka içerikler olabilir.
 
-Katkı; kaynak kodu, dokümantasyon, grafik, veri seti, test senaryosu, eğitim materyali veya başka içerik olabilir.
+**Lisanslama**  
+Katkı sağlayıcı katkısını Apache License 2.0 ve BSD 3-Clause lisansları altında sunmayı kabul eder.
 
-### Lisanslama
+**Telif ve Patent Hakları**  
+Katkı sağlayıcı, çalışmanın özgün olduğunu ve varsa patent haklarını projeye lisansladığını beyan eder.
 
-Katkı sağlayanlar, katkılarını Apache License 2.0 ve BSD 3-Clause lisansları altında sunmayı kabul eder.
+**Kullanım Hakkı**  
+Proje yöneticileri katkıyı kullanabilir, değiştirebilir, dağıtabilir ve yeniden lisanslayabilir.
 
-### Telif ve Patent Hakları
+**Katkı Sağlayıcının Hakları**  
+Katkı sağlayıcı, aynı içeriği başka projelerde de kullanabilir.
 
-Katkı sağlayan kişi, çalışmanın kendisine ait olduğunu ve üçüncü taraf haklarını ihlal etmediğini beyan eder. Varsa katkıya ilişkin patent hakları projeye lisanslanır.
+**Atıf**  
+Katkı sağlayıcının adı uygun yerlerde belirtilir.
 
-### Kullanım Hakkı
-
-Proje yöneticileri, katkıyı kullanma, değiştirme, dağıtma ve yeniden lisanslama hakkına sahiptir.
-
-### Katkı Sağlayıcının Hakları
-
-Katkı sağlayıcı, aynı içeriği başka projelerde kullanma hakkını saklı tutar.
-
-### Atıf
-
-Katkı sağlayıcının adı katkı listelerinde yer alacak ve uygun durumlarda atıf yapılacaktır.
-
-### İletişim ve Kabul
-
-Katkı sağlayıcı aşağıdaki bilgileri doldurarak CLA'yı kabul eder:
-
+**Kabul Formu**  
 Ad Soyad: __________________________  
 E-posta: ___________________________  
 Tarih: _____________________________  
 İmza: ______________________________
 
-Bu sözleşme, katkı sağlayıcının imzasıyla yürürlüğe girer.
-
 ---
 
-## Deutsch
+## 🇩🇪 Deutsch
 
-Diese Vereinbarung regelt die Rechte und Pflichten von Mitwirkenden am Open-Source-Projekt „Emergency Management and Coordination System“ bezüglich Lizenzierung und Nutzung ihrer Beiträge.
+**Zweck**  
+Diese Vereinbarung regelt die Rechte und Pflichten von Mitwirkenden am Projekt „Emergency Management and Coordination System“.
 
-### Beitragsdefinition
+**Beitragsdefinition**  
+Kann Quellcode, Dokumentation, Grafiken, Datensätze, Testfälle, Schulungsmaterialien oder andere Inhalte umfassen.
 
-Ein Beitrag kann Quellcode, Dokumentation, Grafiken, Datensätze, Testszenarien, Schulungsmaterialien oder anderer Inhalt sein.
+**Lizenzierung**  
+Mitwirkende stellen Beiträge unter Apache License 2.0 und BSD 3-Clause bereit.
 
-### Lizenzierung
+**Urheberrecht und Patente**  
+Mitwirkende bestätigen die Originalität und lizenziert etwaige Patente an das Projekt.
 
-Mitwirkende stimmen zu, ihre Beiträge unter der Apache License 2.0 und der BSD 3-Clause Lizenz bereitzustellen.
+**Nutzungsrechte**  
+Projektleiter dürfen Beiträge verwenden, ändern, verbreiten und erneut lizenzieren.
 
-### Urheberrecht und Patent
+**Rechte des Mitwirkenden**  
+Das Recht zur Wiederverwendung bleibt beim Mitwirkenden.
 
-Mitwirkende erklären, dass der Beitrag ihr eigenes Werk ist und keine Rechte Dritter verletzt. Etwaige Patentrechte werden dem Projekt lizenziert.
+**Namensnennung**  
+Der Name wird in Beitragslisten geführt und bei Bedarf genannt.
 
-### Nutzungsrechte
-
-Projektverantwortliche dürfen den Beitrag verwenden, ändern, verbreiten und erneut lizenzieren.
-
-### Rechte des Mitwirkenden
-
-Mitwirkende behalten das Recht, denselben Beitrag in anderen Projekten zu verwenden.
-
-### Namensnennung
-
-Die Namen der Mitwirkenden erscheinen in Beitragslisten und werden bei passender Gelegenheit genannt.
-
-### Annahme
-
-Der Mitwirkende akzeptiert das CLA durch Ausfüllen der folgenden Felder:
-
+**Formular zur Annahme**  
 Name: __________________________  
 E-Mail: _________________________  
 Datum: _________________________  
 Unterschrift: ____________________
 
-Diese Vereinbarung tritt mit der Unterschrift in Kraft.
-
 ---
 
-## Français
+## 🇫🇷 Français
 
-Cet accord régit les droits et responsabilités des contributeurs au projet open-source “Emergency Management and Coordination System” concernant la licence et l’utilisation de leurs contributions.
+**Objectif**  
+Ce document encadre les droits et obligations des contributeurs au projet “Emergency Management and Coordination System”.
 
-### Définition de Contribution
+**Définition de Contribution**  
+Peut inclure du code, de la documentation, des graphiques, des jeux de données, des scénarios de test, ou du matériel éducatif.
 
-Une contribution peut être du code source, de la documentation, des graphiques, des jeux de données, des scénarios de test, du matériel de formation ou tout autre contenu.
+**Licence**  
+Le contributeur accepte Apache License 2.0 et BSD 3-Clause.
 
-### Licence
+**Droits d’auteur et brevets**  
+Le contributeur garantit l’originalité et accorde les brevets associés au projet.
 
-Les contributeurs acceptent de publier leurs contributions sous les licences Apache 2.0 et BSD 3-Clause.
+**Droits d’utilisation**  
+Les mainteneurs peuvent utiliser, modifier, redistribuer et re-licencier le contenu.
 
-### Droits d’auteur et brevet
+**Droits du Contributeur**  
+Le contributeur conserve le droit d’utiliser le contenu ailleurs.
 
-Les contributeurs déclarent que leur travail est original et ne viole pas les droits de tiers. Les éventuels brevets associés sont concédés au projet.
+**Attribution**  
+Le nom sera mentionné lorsque nécessaire.
 
-### Droits d’utilisation
-
-Les responsables du projet peuvent utiliser, modifier, distribuer et re-licencier la contribution.
-
-### Droits du Contributeur
-
-Le contributeur conserve le droit d’utiliser la même contribution dans d’autres projets.
-
-### Attribution
-
-Le nom du contributeur figurera dans les listes de contributions et pourra être cité si nécessaire.
-
-### Acceptation
-
-Le contributeur accepte ce CLA en remplissant les informations suivantes :
-
+**Formulaire d’acceptation**  
 Nom complet : __________________________  
-E-mail : ______________________________  
-Date : ________________________________  
+Email : ________________________________  
+Date : _________________________________  
 Signature : ____________________________
 
-Cet accord prend effet dès la signature.
-
 ---
 
-## Português
+## 🇵🇹 Português
 
-Este acordo regula os direitos e responsabilidades dos colaboradores ao projeto open-source “Emergency Management and Coordination System”, relacionados à licença e uso das suas contribuições.
+**Objetivo**  
+Este acordo regula os direitos e deveres dos colaboradores no projeto “Emergency Management and Coordination System”.
 
-### Definição de Contribuição
+**Definição de Contribuição**  
+Pode ser código-fonte, documentação, gráficos, dados, testes ou materiais educativos.
 
-Uma contribuição pode ser código-fonte, documentação, gráficos, conjuntos de dados, cenários de teste, materiais educativos ou outro conteúdo.
+**Licenciamento**  
+O colaborador aceita as licenças Apache 2.0 e BSD 3-Clause.
 
-### Licenciamento
+**Direitos Autorais e Patentes**  
+Declara originalidade e licencia patentes ao projeto, se houver.
 
-Os colaboradores concordam em licenciar suas contribuições sob Apache License 2.0 e BSD 3-Clause.
+**Direito de Uso**  
+Os responsáveis podem usar, alterar e redistribuir a contribuição.
 
-### Direitos Autorais e Patentes
+**Direito do Colaborador**  
+Pode reutilizar o mesmo conteúdo em outros projetos.
 
-Os colaboradores declaram que suas contribuições são originais e não infringem direitos de terceiros. Quaisquer patentes associadas são licenciadas ao projeto.
+**Atribuição**  
+O nome será citado em listas e conforme apropriado.
 
-### Direitos de Uso
-
-Os mantenedores do projeto podem usar, modificar, distribuir e re-licenciar a contribuição.
-
-### Direitos do Colaborador
-
-O colaborador mantém o direito de usar o mesmo conteúdo em outros projetos.
-
-### Atribuição
-
-O nome do colaborador constará nas listas de contribuição e poderá ser citado, quando apropriado.
-
-### Aceitação
-
-O colaborador aceita este CLA ao preencher os seguintes campos:
-
+**Formulário de Aceitação**  
 Nome completo: __________________________  
-E-mail: ________________________________  
+Email: ________________________________  
 Data: _________________________________  
 Assinatura: ____________________________
 
-Este acordo entra em vigor após a assinatura.
-
 ---
 
-## Español
+## 🇪🇸 Español
 
-Este acuerdo regula los derechos y responsabilidades de los colaboradores del proyecto de código abierto “Emergency Management and Coordination System” en relación con el licenciamiento y uso de sus contribuciones.
+**Propósito**  
+Este acuerdo regula derechos y deberes de los colaboradores del proyecto “Emergency Management and Coordination System”.
 
-### Definición de Contribución
+**Definición de Contribución**  
+Incluye código fuente, documentación, gráficos, conjuntos de datos, pruebas o material educativo.
 
-Una contribución puede ser código fuente, documentación, gráficos, conjuntos de datos, escenarios de prueba, materiales educativos u otro contenido.
+**Licencia**  
+El colaborador acepta Apache 2.0 y BSD 3-Clause.
 
-### Licenciamiento
+**Derechos de Autor y Patentes**  
+Declara originalidad y licencia sus patentes al proyecto.
 
-Los colaboradores aceptan licenciar sus contribuciones bajo Apache License 2.0 y BSD 3-Clause.
+**Derechos de Uso**  
+Los responsables pueden usar, modificar y redistribuir la contribución.
 
-### Derechos de Autor y Patentes
+**Derechos del Colaborador**  
+Puede reutilizar el contenido en otros proyectos.
 
-Los colaboradores declaran que su trabajo es original y no infringe derechos de terceros. Cualquier patente relacionada se licenciará al proyecto.
+**Atribución**  
+El nombre se citará en listas de contribuciones.
 
-### Derechos de Uso
-
-Los responsables del proyecto pueden usar, modificar, distribuir y re-licenciar la contribución.
-
-### Derechos del Colaborador
-
-El colaborador conserva el derecho de usar el mismo contenido en otros proyectos.
-
-### Atribución
-
-El nombre del colaborador aparecerá en las listas de contribuciones y se le atribuirá cuando corresponda.
-
-### Aceptación
-
-El colaborador acepta este CLA completando lo siguiente:
-
+**Formulario de Aceptación**  
 Nombre completo: __________________________  
 Correo electrónico: ________________________  
 Fecha: ___________________________________  
 Firma: ___________________________________
-
-Este acuerdo entra en vigor con la firma.
 
