@@ -4,13 +4,13 @@ The Emergency Management and Coordination application is a complete, end-to-end,
 
 ![Ana Dashboard](assets/screenshots/dashboard-main.png)
 
-[![Next.js]( https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js )]( https://nextjs.org/)
-[![ TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript )]( https://www.typescriptlang.org/)
-[![ Prisma](https://img.shields.io/badge/Prisma-5.0-2D3748?style=flat-square&logo=prisma )]( https://www.prisma.io/)
-[![ PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-336791?style=flat-square&logo=postgresql )]( https://www.postgresql.org/)
-[![ Ant Design]( https://img.shields.io/badge/Ant%20Design-5.0-0170FE?style=flat-square&logo=ant-design )]( https://ant.design/)
-[![ Apache 2.0]( https://img.shields.io/badge/License-Apache%202.0-blue.svg )]( https://opensource.org/licenses/Apache-2.0)
-[![ BSD 3- Clause]( https://img.shields.io/badge/License-BSD%203-- Clause-blue.svg )]( https://opensource.org/licenses/BSD-3-Clause)
+[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-5.0-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-336791?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
+[![Ant Design](https://img.shields.io/badge/Ant%20Design-5.0-0170FE?style=flat-square&logo=ant-design)](https://ant.design/)
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
 ## Contents
 
