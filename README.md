@@ -80,6 +80,8 @@ The Emergency Management and Coordination System is a comprehensive, open-source
 2. **User Requests** → Next.js API Routes → Prisma ORM → PostgreSQL
 3. **Real-Time Updates** → WebSocket → Frontend Components
 
+---
+
 # # System Modules and Screenshots
 
 ## # Main Dashboard
@@ -94,6 +96,9 @@ The main dashboard is designed for real-time viewing of critical system-wide dat
 - Notification center
 - System status indicators
 
+---
+
+
 ## # Map Module
 Interactive map system visualizing global disaster data.
 
@@ -105,6 +110,9 @@ Interactive map system visualizing global disaster data.
 - Layered map views
 - Geo-filtering and search
 - Popup detail information
+
+---
+
 
 ## # Regional Management
 Module where the hierarchical geographical structure is managed and emergency levels are determined.
@@ -118,6 +126,9 @@ Module where the hierarchical geographical structure is managed and emergency le
 - Geographic coordinate management
 - Region-based statistics
 
+---
+
+
 ## # Personnel Management
 The system in which the corporate personnel structure is organized and job assignments are made.
 
@@ -129,6 +140,9 @@ The system in which the corporate personnel structure is organized and job assig
 - Contact information management
 - Task history tracking
 - Performance evaluation
+
+---
+
 
 ### Warehouse Management
 Comprehensive inventory system that coordinates the storage and distribution of disaster supplies.
@@ -143,6 +157,9 @@ Comprehensive inventory system that coordinates the storage and distribution of 
 - Vehicle fleet tracking
 - Detailed reporting
 
+---
+
+
 ## # Equipment Management
 Module where the tracking, maintenance and distribution of emergency equipment is managed.
 
@@ -155,6 +172,9 @@ Module where the tracking, maintenance and distribution of emergency equipment i
 - Usage status monitoring
 - Reservation system
 
+---
+
+
 ## # Inventory Management
 A system that tracks general material and resource inventory in detail.
 
@@ -166,6 +186,9 @@ A system that tracks general material and resource inventory in detail.
 - Expiration date warnings
 - Minimum stock limits
 - Supplier information
+
+---
+
 
 ## # Container /Tent City Management
 A comprehensive system for coordinating the establishment and management of temporary shelters.
@@ -180,6 +203,9 @@ A comprehensive system for coordinating the establishment and management of temp
 - City personnel management
 - Logistics and material distribution
 
+---
+
+
 ## # Task Management
 Mission coordination system for planning and monitoring emergency operations.
 
@@ -193,6 +219,9 @@ Mission coordination system for planning and monitoring emergency operations.
 - Task dependencies
 - Completion reports
 
+---
+
+
 ## # Notification Center
 A central notification system where important system-wide events and alerts are managed.
 
@@ -204,6 +233,9 @@ A central notification system where important system-wide events and alerts are 
 - Automatic warning systems
 - Notification history
 - Personalized alerts
+
+---
+
 
 ## # Volunteer Management
 The system by which volunteer coordination and training programs are managed.
@@ -218,6 +250,9 @@ The system by which volunteer coordination and training programs are managed.
 - Volunteer store
 - Group organization
 
+---
+
+
 ## # Reporting System
 Comprehensive reporting module where system data is analyzed and reported.
 
@@ -230,6 +265,9 @@ Comprehensive reporting module where system data is analyzed and reported.
 - Creating timely reports
 - Statistical analysis
 - Performance metrics
+
+---
+
 
 ## # Planning Module
 Strategic planning system in which pre-disaster preparedness and response plans are created.
@@ -244,6 +282,9 @@ Strategic planning system in which pre-disaster preparedness and response plans 
 - Plan versioning
 - Simulation support
 
+---
+
+
 ## # Log Management
 Log tracking system where system operations are recorded and audited.
 
@@ -256,6 +297,9 @@ Log tracking system where system operations are recorded and audited.
 - Security logs
 - Performance metrics
 - Log filtering and searching
+
+---
+
 
 ## # System Settings
 Settings module where system configuration and user preferences are managed.
@@ -270,6 +314,9 @@ Settings module where system configuration and user preferences are managed.
 - Backup configuration
 - API configuration
 
+---
+
+
 ## # Profile Management
 Profile system where user account information and personal preferences are managed.
 
@@ -282,6 +329,9 @@ Profile system where user account information and personal preferences are manag
 - Communication preferences
 - Security settings
 - Account history
+
+---
+
 
 # # Setup
 
