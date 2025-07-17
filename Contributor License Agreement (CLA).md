@@ -1,32 +1,38 @@
-Contributor License Agreement (CLA)
+# Katkı Lisans Sözleşmesi (Contributor License Agreement - CLA)
 
-Bu belge, **"Acil Durum Yönetim ve Koordinasyon Sistemi"** projesine katkı sağlayan bireylerin, katkılarının lisanslanmasıyla ilgili haklarını ve sorumluluklarını tanımlar.
+Bu sözleşme, “Acil Durum Yönetim ve Koordinasyon Sistemi” açık kaynak projesine katkı sunan geliştiricinin, katkısının lisanslanması ve kullanımıyla ilgili hak ve sorumluluklarını düzenler.
 
-1. Katkı Tanımı:
-   Katkı, kaynak kodu, dokümantasyon, grafik, veri veya başka herhangi bir içerik olabilir.
+## Katkı Tanımı
 
-2. Lisanslama:
-   Katkı sağlayıcı, katkısını Apache License 2.0 ve BSD 3-Clause lisansları altında sunmayı kabul eder.
+Katkı; kaynak kodu, dokümantasyon, grafik, veri seti, test senaryosu, eğitim materyali veya başka bir içerik olabilir.
 
-3. Telif ve Patent Hakları:
-   Katkı sağlayıcı, katkının kendi çalışması olduğunu ve üçüncü taraf haklarını ihlal etmediğini beyan eder.
-   Katkı sağlayıcı, katkı ile ilgili varsa patent haklarını projeye devreder.
+## Lisanslama
 
-4. Kullanım Hakkı:
-   Proje yöneticileri, katkıyı projede kullanma, değiştirme, dağıtma ve yeniden lisanslama hakkına sahiptir.
+Katkı sağlayıcı, katkısını Apache License 2.0 ve BSD 3-Clause lisansları altında sunmayı kabul eder.
 
-5. Katkı Sağlayıcının Hakları:
-   Katkı sağlayıcı, katkısını başka projelerde kullanma hakkını saklı tutar.
+## Telif ve Patent Hakları
 
-6. Atıf:
-   Katkı sağlayıcının adı, katkı listesinde ve uygun yerlerde anılacaktır.
+Katkı sağlayıcı, katkının kendi özgün çalışması olduğunu ve üçüncü tarafların haklarını ihlal etmediğini beyan eder. Katkıya ilişkin varsa patent haklarını projeye lisanslar.
 
-7. İletişim:
-   Katkı sağlayıcı, aşağıdaki bilgileri doldurarak bu CLA’yı kabul eder:
+## Kullanım Hakkı
 
-   - Ad Soyad: __________________________
-   - E-posta: ___________________________
-   - Tarih: _____________________________
-   - İmza: _____________________________
+Proje yöneticisi, katkıyı projede kullanma, değiştirme, dağıtma ve yeniden lisanslama hakkına sahiptir.
+
+## Katkı Sağlayıcının Hakları
+
+Katkı sağlayıcı, aynı katkıyı başka projelerde kullanma hakkını saklı tutar.
+
+## Atıf
+
+Katkı sağlayıcısının adı, katkı listelerinde yer alacak ve uygun durumlarda atıf yapılacaktır.
+
+## İletişim ve Kabul
+
+Katkı sağlayıcı, aşağıdaki bilgileri doldurarak bu CLA'yı kabul eder:
+
+Ad Soyad: __________________________  
+E-posta: ___________________________  
+Tarih: _____________________________  
+İmza: ______________________________
 
 Bu CLA, katkı sağlayıcının imzasıyla yürürlüğe girer.
