@@ -446,7 +446,7 @@ For detailed license texts:
 
 For questions about the project, visit GitHub You can contact us through the Issues section or directly:
 
-- ** GitHub **: [ https://github.com/ArslantasM/Emergency_Management_and_Coordination_System]( https://github.com/ArslantasM/Emergency_Management_and_Coordination_System)
+- **GitHub**: [ https://github.com/ArslantasM/Emergency_Management_and_Coordination_System]( https://github.com/ArslantasM/Emergency_Management_and_Coordination_System)
 - **Email**: arslantas.m@gmail.com
 - **Phone**: +90 542 559 69 46
 
@@ -456,13 +456,16 @@ I would like to thank all volunteers who supported the idea, development process
 
 ---
 
-<p align="center">
-<strong>Technological transformation in disaster management worldwide with the <em>Emergency Management and Coordination System</em></strong>  
-<br><br>
-🌟 [Star Project](https://github.com/ArslantasM/Emergency_Management_and_Coordination_System)  
-🐛 [Bug Report](https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues)  
-✨ [Feature Request](https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues)
-</p>
+<div align="center">
+
+Technological transformation in disaster management worldwide with the <strong>Emergency Management and Coordination System</strong>
+
+🌟 <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System">Star Project</a> |
+🐛 <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues">Bug Report</a> |
+✨ <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues">Feature Request</a>
+
+</div>
+
 
 
 
