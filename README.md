@@ -1,465 +1,467 @@
-# Acil Durum Yönetim ve Koordinasyon Sistemi (Emergency Management System)
+# Emergency Management and Coordination System
 
-Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformudur. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.
+The Emergency Management and Coordination application is a complete, end-to-end, enterprise-class disaster management application. Developed with PostgreSQL , PostGIS , Next.js, and Python Flask , it's an open-source coordination platform that collects and visualizes real-time disaster data. It aims to streamline disaster management by tracking global earthquake, fire, and tsunami data. Designed with an enterprise-level architecture, the system aims to facilitate holistic disaster management and enhance coordination among units.
 
-![Ana Dashboard](assets/screenshots/dashboard-main.png)
+![ Main Dashboard]( assets / screenshots /dashboard-main.png)
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![Prisma](https://img.shields.io/badge/Prisma-5.0-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-336791?style=flat-square&logo=postgresql)](https://www.postgresql.org/)
-[![Ant Design](https://img.shields.io/badge/Ant%20Design-5.0-0170FE?style=flat-square&logo=ant-design)](https://ant.design/)
-[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Next.js]( https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js )]( https://nextjs.org/)
+[![ TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript )]( https://www.typescriptlang.org/)
+[![ Prisma](https://img.shields.io/badge/Prisma-5.0-2D3748?style=flat-square&logo=prisma )]( https://www.prisma.io/)
+[![ PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-336791?style=flat-square&logo=postgresql )]( https://www.postgresql.org/)
+[![ Ant Design]( https://img.shields.io/badge/Ant%20Design-5.0-0170FE?style=flat-square&logo=ant-design )]( https://ant.design/)
+[![ Apache 2.0]( https://img.shields.io/badge/License-Apache%202.0-blue.svg )]( https://opensource.org/licenses/Apache-2.0)
+[![ BSD 3- Clause]( https://img.shields.io/badge/License-BSD%203-- Clause-blue.svg )]( https://opensource.org/licenses/BSD-3-Clause)
 
-## İçindekiler
+## Contents
 
-- [ Proje Hakkında](#-proje-hakkında)
-- [ Öne Çıkan Özellikler](#-öne-çıkan-özellikler)
-- [ Sistem Mimarisi](#️-sistem-mimarisi)
-- [ Sistem Modülleri ve Ekran Görüntüleri](#-sistem-modülleri-ve-ekran-görüntüleri)
-- [ Kurulum](#-kurulum)
-- [ Teknoloji Yığını](#-teknoloji-yığını)
-- [ API Endpoint'leri](#-api-endpointleri)
-- [ Veritabanı Şeması](#️-veritabanı-şeması)
-- [ Güvenlik ve Roller](#-güvenlik-ve-roller)
-- [ Geliştirme Süreci](#-geliştirme-süreci)
-- [ Roadmap](#-roadmap)
-- [ Katkı Sağlama](#-katkı-sağlama)
-- [ Lisans](#-lisans)
-- [ İletişim](#-iletişim)
+- [ Project About]( #-project-about)
+- [ Featured Features]( #-featured-features)
+- [ System Architecture]( #️-system-architecture)
+- [ System Modules and Screenshots]( #-system-modules-and-screenshots)
+- [ Setup ](#-setup)
+- [ Technology [Stack]( #-technology-stack)
+- [ API Endpoints ]( #-api-endpoints)
+- [ Database [Schema]( #️-database-schema)
+- [ Security and Roles ]( #-security-and-roles)
+- [ Development Process]( #-development-process)
+- [ Roadmap ](#-roadmap)
+- [ Contribution Providing]( #-contribution-providing)
+- [ License ](#-license)
+- [ Contact ](#-contact)
 
-##  Proje Hakkında
+# # About the Project
 
-**Acil Durum Yönetim ve Koordinasyon Sistemi**, dünya çapında afet yönetimi için geliştirilmiş kapsamlı bir açık kaynaklı platformdur. Modern web teknolojileri kullanılarak oluşturulan sistem, küresel düzeyde deprem, yangın ve tsunami verilerini gerçek zamanlı olarak takip eder ve afet yönetimini kolaylaştırır.
+The Emergency Management and Coordination System is a comprehensive, open-source platform developed for global disaster management. Built using modern web technologies, the system tracks global earthquake, fire, and tsunami data in real time, facilitating disaster management.
 
-###  Ana Hedefler
+## # Main Goals
 
-- ** Küresel Kapsam**: Dünya genelinde afet verilerinin takibi ve yönetimi
-- ** Gerçek Zamanlı İzleme**: Canlı deprem, yangın ve tsunami verilerinin takibi
-- ** Kurumsal Yapı**: Büyük organizasyonlar için ölçeklenebilir mimari
-- ** Koordinasyon**: Birimler arası etkili iletişim ve koordinasyon
-- ** Veri Analizi**: Kapsamlı raporlama ve analiz araçları
+- **Global Coverage**: Tracking and management of disaster data worldwide
+- ** Real-Time Monitoring **: Track live earthquake, fire and tsunami data
+- **Organizational Structure**: Scalable architecture for large organizations
+- ** Coordination **: Effective communication and coordination between units
+- ** Data Analysis **: Comprehensive reporting and analysis tools
 
-##  Öne Çıkan Özellikler
+# # Featured Features
 
--  **Küresel veri entegrasyonu**: NASA FIRMS, USGS, EMSC, Tsunami Alert servisleri
--  **Harita tabanlı görselleştirme**: Mapbox GL JS ve Leaflet destekli dashboard
--  **Depo ve envanter yönetimi**: Detaylı kategori, altyapı ve şart sistemleri
--  **Ekipman ve envanter takibi**: Marka, model, seri numarası ve bakım kayıtları ile izleme
--  **Konteyner ve çadır kent yönetimi**: Barınma alanları için altyapı ve lojistik desteği
--  **Personel ve gönüllü yönetimi**: Rol bazlı atama, iletişim ve görev eşleştirme
--  **Görev planlama ve yönetimi**: Acil durum operasyonlarının zamanlaması ve takibi
--  **Bölge yönetimi**: Hiyerarşik coğrafi yapı, acil durum seviyelerine göre renkli harita kaplamaları
--  **Log yönetimi**: Sistem işlemlerinin denetimi ve hata takibi
--  **Raporlama araçları**: Veri analizine dayalı görsel ve metinsel çıktılar
--  **Ayarlar modülü**: Sistem yapılandırması ve kullanıcı tercihleri yönetimi
--  **Güvenlik yapısı**: Rol ve yetki tabanlı erişim kontrolü (RBAC)
--  **PostGIS ile coğrafi veri analizi**: 31+ tablo ve gelişmiş sorgu desteği
--  **Akıllı önbellekleme sistemi**: JSON dosya tabanlı hızlı veri erişimi
+- **Global data integration**: NASA FIRMS, USGS, EMSC, Tsunami Alert services
+- **Map-based visualization**: Mapbox GL JS and Leaflet -powered dashboard
+- **Warehouse and inventory management**: Detailed category, infrastructure and condition systems
+- **Equipment and inventory tracking**: Tracking by brand, model, serial number and maintenance records
+- **Container and tent city management**: Infrastructure and logistics support for shelter areas
+- **Personnel and volunteer management**: Role-based assignment, communication and task matching
+- **Mission planning and management**: Scheduling and tracking of emergency operations
+- **District management**: Hierarchical geographic structure, color map overlays according to emergency levels
+- **Log management**: Control of system operations and error tracking
+- **Reporting tools**: Visual and textual outputs based on data analysis
+- **Settings module**: System configuration and user preferences management
+- **Security structure**: Role and authority-based access control (RBAC)
+- ** Geographic data analysis with PostGIS **: 31+ tables and advanced query support
+- **Smart caching system**: Fast data access based on JSON files
 
-##  Sistem Mimarisi
+# # System Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Backend API   │    │   Veritabanı    │
-│   (Next.js)     │◄──►│   (Flask)       │◄──►│  (PostgreSQL)   │
-│                 │    │                 │    │   + PostGIS     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
+┌────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+│ Frontend │ │ Backend API │ │ Database │
+│ (Next.js) │ ◄ ── ► │ ( Flask )    │ ◄ ── ► │ ( PostgreSQL ) │
+│ │ │ │ │ + PostGIS │
+└────────────────┘ └───────────────────┘ └──────────────────────┘
+│ │ │
          ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Harita Servisi │    │  Dış API'ler    │    │  Cache Sistemi  │
-│ (Mapbox/Leaflet)│    │ (NASA/USGS/EMSC)│    │     (JSON)      │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+│ Map Service │ │ External APIs │ │ Cache System │
+│ ( Mapbox / Leaflet )│ │ (NASA/USGS/ EMSC)│ │ (JSON) │
+└────────────────┘ └──────────────────┘ └─────────────────────┘
 ```
 
-###  Veri Akışı
-1. **Dış API'ler** → Cron servisleri → Cache → Veritabanı
-2. **Kullanıcı İstekleri** → Next.js API Routes → Prisma ORM → PostgreSQL
-3. **Gerçek Zamanlı Güncellemeler** → WebSocket → Frontend Bileşenleri
+## # Data Flow
+1. **External APIs ** → Cron services → Cache → Database
+2. **User Requests** → Next.js API Routes → Prisma ORM → PostgreSQL
+3. **Real-Time Updates** → WebSocket → Frontend Components
 
-##  Sistem Modülleri ve Ekran Görüntüleri
+# # System Modules and Screenshots
 
-###  Ana Dashboard
-Ana kontrol paneli, sistem genelindeki kritik verilerin gerçek zamanlı görüntülenmesi için tasarlanmıştır.
+## # Main Dashboard
+The main dashboard is designed for real-time viewing of critical system-wide data.
 
-![Ana Dashboard](assets/screenshots/dashboard-overview.png)
+![ Main Dashboard]( assets / screenshots /dashboard-overview.png)
 
-**Özellikler:**
-- Gerçek zamanlı afet verileri (deprem, yangın, tsunami)
-- İstatistiksel özet kartları
-- Hızlı erişim menüsü
-- Bildirim merkezi
-- Sistem durumu göstergeleri
+** Features:* *
+- Real-time disaster data (earthquake, fire, tsunami)
+- Statistical summary cards
+- Quick access menu
+- Notification center
+- System status indicators
 
-###  Harita Modülü
-Küresel afet verilerinin görselleştirildiği interaktif harita sistemi.
+## # Map Module
+Interactive map system visualizing global disaster data.
 
-![Harita Modülü](assets/screenshots/map-module.png)
+![ Map Module]( assets / screenshots /map-module.png)
 
-**Özellikler:**
-- Mapbox GL JS ve Leaflet entegrasyonu
-- Gerçek zamanlı deprem, yangın ve tsunami verileri
-- Katmanlı harita görünümleri
-- Coğrafi filtreleme ve arama
-- Popup detay bilgileri
+** Features:* *
+- Mapbox GL JS and Leaflet integration
+- Real-time earthquake, fire and tsunami data
+- Layered map views
+- Geo-filtering and search
+- Popup detail information
 
-###  Bölge Yönetimi
-Hiyerarşik coğrafi yapının yönetildiği ve acil durum seviyelerinin belirlendiği modül.
+## # Regional Management
+Module where the hierarchical geographical structure is managed and emergency levels are determined.
 
-![Bölge Yönetimi](assets/screenshots/regions-management.png)
+![ Region Management]( assets / screenshots /regions-management.png)
 
-**Özellikler:**
-- Ülke, şehir, ilçe hiyerarşisi
-- Acil durum seviye ataması (CRITICAL, HIGH, MEDIUM, LOW)
-- Renkli harita kaplamaları
-- Coğrafi koordinat yönetimi
-- Bölge bazlı istatistikler
+** Features:* *
+- Country, city, district hierarchy
+- Emergency level assignment (CRITICAL, HIGH, MEDIUM, LOW)
+- Colorful map overlays
+- Geographic coordinate management
+- Region-based statistics
 
-###  Personel Yönetimi
-Kurumsal personel yapısının organize edildiği ve görev atamalarının yapıldığı sistem.
+## # Personnel Management
+The system in which the corporate personnel structure is organized and job assignments are made.
 
-![Personel Yönetimi](assets/screenshots/personnel-management.png)
+![ Personnel Management]( assets / screenshots /personnel-management.png)
 
-**Özellikler:**
-- Rol bazlı personel kayıtları
-- Departman ve pozisyon atamaları
-- İletişim bilgileri yönetimi
-- Görev geçmişi takibi
-- Performans değerlendirme
+** Features:* *
+- Role-based personnel records
+- Department and position assignments
+- Contact information management
+- Task history tracking
+- Performance evaluation
 
-### Depo Yönetimi
-Afet malzemelerinin depolanması ve dağıtımının koordine edildiği kapsamlı envanter sistemi.
+### Warehouse Management
+Comprehensive inventory system that coordinates the storage and distribution of disaster supplies.
 
-![Depo Yönetimi](assets/screenshots/warehouse-management.png)
+![ Warehouse Management]( assets / screenshots /warehouse-management.png)
 
-**Özellikler:**
-- Çoklu depo yönetimi
-- Stok takibi ve uyarı sistemi
-- Transfer ve nakliye koordinasyonu
-- Depo personeli yönetimi
-- Araç filosu takibi
-- Detaylı raporlama
+** Features:* *
+- Multi-warehouse management
+- Stock tracking and warning system
+- Transfer and transportation coordination
+- Warehouse personnel management
+- Vehicle fleet tracking
+- Detailed reporting
 
-###  Ekipman Yönetimi
-Acil durum ekipmanlarının takibi, bakımı ve dağıtımının yönetildiği modül.
+## # Equipment Management
+Module where the tracking, maintenance and distribution of emergency equipment is managed.
 
-![Ekipman Yönetimi](assets/screenshots/equipment-management.png)
+![ Equipment Management]( assets / screenshots /equipment-management.png)
 
-**Özellikler:**
-- Ekipman kategorileri ve alt kategoriler
-- Marka, model, seri numarası takibi
-- Bakım planlaması ve geçmişi
-- Kullanım durumu izleme
-- Rezervasyon sistemi
+** Features:* *
+- Equipment categories and subcategories
+- Brand, model, serial number tracking
+- Maintenance planning and history
+- Usage status monitoring
+- Reservation system
 
-###  Envanter Yönetimi
-Genel malzeme ve kaynak envanterinin detaylı takip edildiği sistem.
+## # Inventory Management
+A system that tracks general material and resource inventory in detail.
 
-![Envanter Yönetimi](assets/screenshots/inventory-management.png)
+![ Inventory Management]( assets / screenshots /inventory-management.png)
 
-**Özellikler:**
-- Kategori bazlı envanter sınıflandırması
-- Birim ve miktar takibi
-- Son kullanma tarihi uyarıları
-- Minimum stok limitleri
-- Tedarikçi bilgileri
+** Features:* *
+- Category-based inventory classification
+- Unit and quantity tracking
+- Expiration date warnings
+- Minimum stock limits
+- Supplier information
 
-###  Konteyner/Çadır Kent Yönetimi
-Geçici barınma alanlarının kurulumu ve yönetiminin koordine edildiği kapsamlı sistem.
+## # Container /Tent City Management
+A comprehensive system for coordinating the establishment and management of temporary shelters.
 
-![Konteyner Kent Yönetimi](assets/screenshots/container-camps.png)
+![ Container City Management]( assets / screenshots / container-camps.png)
 
-**Özellikler:**
-- Kent kurulum ve planlama
-- Altyapı yönetimi (su, elektrik, kanalizasyon)
-- Sakin kayıt ve takibi
-- Hizmet koordinasyonu (sağlık, eğitim, sosyal)
-- Kent personeli yönetimi
-- Lojistik ve malzeme dağıtımı
+** Features:* *
+- Urban establishment and planning
+- Infrastructure management (water, electricity, sewerage)
+- Camp recording and tracking
+- Service coordination (health, education, social)
+- City personnel management
+- Logistics and material distribution
 
-###  Görev Yönetimi
-Acil durum operasyonlarının planlanması ve takip edildiği görev koordinasyon sistemi.
+## # Task Management
+Mission coordination system for planning and monitoring emergency operations.
 
-![Görev Yönetimi](assets/screenshots/task-management.png)
+![ Task Management]( assets / screenshots /task-management.png)
 
-**Özellikler:**
-- Görev oluşturma ve atama
-- Öncelik seviyesi belirleme
-- İlerleme durumu takibi
-- Zaman çizelgesi yönetimi
-- Görev bağımlılıkları
-- Tamamlanma raporları
+** Features:* *
+- Creating and assigning tasks
+- Priority level determination
+- Progress tracking
+- Timetable management
+- Task dependencies
+- Completion reports
 
-###  Bildirim Merkezi
-Sistem genelindeki önemli olayların ve uyarıların yönetildiği merkezi bildirim sistemi.
+## # Notification Center
+A central notification system where important system-wide events and alerts are managed.
 
-![Bildirim Merkezi](assets/screenshots/notifications.png)
+![ Notification Center]( assets / screenshots /notifications.png)
 
-**Özellikler:**
-- Gerçek zamanlı bildirimler
-- Öncelik bazlı sınıflandırma
-- Otomatik uyarı sistemleri
-- Bildirim geçmişi
-- Kişiselleştirilmiş uyarılar
+** Features:* *
+- Real-time notifications
+- Priority-based classification
+- Automatic warning systems
+- Notification history
+- Personalized alerts
 
-###  Gönüllü Yönetimi
-Gönüllü koordinasyonu ve eğitim programlarının yönetildiği sistem.
+## # Volunteer Management
+The system by which volunteer coordination and training programs are managed.
 
-![Gönüllü Yönetimi](assets/screenshots/volunteers-management.png)
+![ Volunteer Management]( assets / screenshots /volunteers-management.png)
 
-**Özellikler:**
-- Gönüllü kayıt ve profil yönetimi
-- Beceri ve sertifika takibi
-- Eğitim modülü ve programları
-- Görev eşleştirme sistemi
-- Gönüllü mağazası
-- Grup organizasyonu
+** Features:* *
+- Volunteer registration and profile management
+- Skill and certification tracking
+- Training modules and programs
+- Mission matching system
+- Volunteer store
+- Group organization
 
-###  Raporlama Sistemi
-Sistem verilerinin analiz edilip raporlandığı kapsamlı raporlama modülü.
+## # Reporting System
+Comprehensive reporting module where system data is analyzed and reported.
 
-![Raporlama Sistemi](assets/screenshots/reports-module.png)
+![ Reporting System]( assets / screenshots /reports-module.png)
 
-**Özellikler:**
-- Özelleştirilebilir rapor şablonları
-- Grafik ve görsel analiz araçları
-- PDF ve Excel export
-- Zamanlı rapor oluşturma
-- İstatistiksel analizler
-- Performans metrikleri
+** Features:* *
+- Customizable report templates
+- Graphical and visual analysis tools
+- PDF and Excel export
+- Creating timely reports
+- Statistical analysis
+- Performance metrics
 
-###  Planlama Modülü
-Afet öncesi hazırlık ve müdahale planlarının oluşturulduğu stratejik planlama sistemi.
+## # Planning Module
+Strategic planning system in which pre-disaster preparedness and response plans are created.
 
-![Planlama Modülü](assets/screenshots/planning-module.png)
+![ Planning Module]( assets / screenshots /planning-module.png)
 
-**Özellikler:**
-- Senaryo tabanlı planlama
-- Kaynak tahsisi planlaması
-- Zaman çizelgesi oluşturma
-- Risk değerlendirme matrisleri
-- Plan versiyonlama
-- Simülasyon desteği
+** Features:* *
+- Scenario-based planning
+- Resource allocation planning
+- Creating a timeline
+- Risk assessment matrices
+- Plan versioning
+- Simulation support
 
-###  Log Yönetimi
-Sistem işlemlerinin kaydedildiği ve denetlendiği log takip sistemi.
+## # Log Management
+Log tracking system where system operations are recorded and audited.
 
-![Log Yönetimi](assets/screenshots/logging-module.png)
+![ Log Management]( assets / screenshots /logging-module.png)
 
-**Özellikler:**
-- Detaylı sistem logları
-- Kullanıcı işlem geçmişi
-- Hata takibi ve analizi
-- Güvenlik logları
-- Performans metrikleri
-- Log filtreleme ve arama
+** Features:* *
+- Detailed system logs
+- User transaction history
+- Error tracking and analysis
+- Security logs
+- Performance metrics
+- Log filtering and searching
 
-###  Sistem Ayarları
-Sistem yapılandırması ve kullanıcı tercihlerinin yönetildiği ayarlar modülü.
+## # System Settings
+Settings module where system configuration and user preferences are managed.
 
-![Sistem Ayarları](assets/screenshots/settings-module.png)
+![ System Settings]( assets / screenshots / settings-module.png)
 
-**Özellikler:**
-- Kullanıcı profil ayarları
-- Sistem yapılandırması
-- Bildirim tercihleri
-- Güvenlik ayarları
-- Yedekleme yapılandırması
-- API konfigürasyonu
+** Features:* *
+- User profile settings
+- System configuration
+- Notification preferences
+- Security settings
+- Backup configuration
+- API configuration
 
-###  Profil Yönetimi
-Kullanıcı hesap bilgilerinin ve kişisel tercihlerinin yönetildiği profil sistemi.
+## # Profile Management
+Profile system where user account information and personal preferences are managed.
 
-![Profil Yönetimi](assets/screenshots/profile-management.png)
+![ Profile Management]( assets / screenshots /profile-management.png)
 
-**Özellikler:**
-- Kişisel bilgi güncelleme
-- Şifre değiştirme
-- Profil fotoğrafı yönetimi
-- İletişim tercihleri
-- Güvenlik ayarları
-- Hesap geçmişi
+** Features:* *
+- Personal information update
+- Change password
+- Profile photo management
+- Communication preferences
+- Security settings
+- Account history
 
-##  Kurulum
+# # Setup
 
-### Gereksinimler
+### Requirements
 
 - Node.js 18+
 - Python 3.8+
-- PostgreSQL 14+ (PostGIS ile)
-- Git
+- PostgreSQL 14+ ( with PostGIS )
+- Go
 
-### Projenin Başlatılması
+### Project Startup
 
-```bash
-git clone <repository-url>
-cd emergency-management
+``` bash
+git clone < repository -url>
+CD emergency management
 npm install
-npx prisma generate
-npx prisma db push
-node scripts/add-users.js
+npx prism generate
+npx prism db push
+node scripts /add-users.js
 npm run dev
 ```
 
-### Veritabanı Kurulumu
+### Database Setup
 
-```bash
+``` bash
 createdb emergency_management
-psql -d emergency_management -c "CREATE EXTENSION postgis;"
-psql -d emergency_management -c "CREATE EXTENSION postgis_topology;"
+psql -d emergency_management -c "CREATE EXTENSION postgis ;"
+psql -d emergency_management -c "CREATE EXTENSION postgis_topology ;"
 ```
 
-### Ortam Değişkenleri
+### Environment Variables
 
-`.env.local` dosyası oluşturun:
+Create a ` .env .local` file:
 
-```env
+``` env
 DATABASE_URL="postgresql://username:password@localhost:5432/emergency_management"
 NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="your-secret-key"
-MAPBOX_ACCESS_TOKEN="your-mapbox-token"
+NEXTAUTH_SECRET=" your-secret-key "
+MAPBOX_ACCESS_TOKEN=" your-mapbox-token "
 ```
 
-##  Teknoloji Yığını
+# # Technology Stack
 
-| Katman            | Teknoloji               |
+| Layer | Technology |
 |-------------------|-------------------------|
-| Backend           | Python Flask API        |
-| Frontend          | Next.js (React tabanlı) |
-| Veritabanı        | PostgreSQL + PostGIS    |
-| ORM               | Prisma ORM              |
-| Harita Sistemi    | Mapbox GL JS, Leaflet   |
-| Kimlik Doğrulama  | NextAuth.js             |
-| UI Framework      | Ant Design              |
-| Stil              | Tailwind CSS            |
+| Backend | Python Flask API |
+| Frontend | Next.js ( React based) |
+| Database | PostgreSQL + PostGIS |
+| ORM | Prisma ORM |
+| Map System | Mapbox GL JS, Leaflet |
+| Authentication | NextAuth.js |
+| UI Framework | Ant Design |
+| Style | Tailwind CSS |
 
-##  API Endpoint'leri
+# # API Endpoints
 
-- `/api/earthquakes`: Deprem verisi
-- `/api/fires/all`: Yangın verisi
-- `/api/tsunami-alerts`: Tsunami uyarıları
-- `/api/notifications`: Bildirim servisi
-- `/api/cache/earthquakes`: Önbellekten deprem verisi
-- `/api/cache/fires`: Önbellekten yangın verisi
-- `/api/regions`: Bölge yönetimi
-- `/api/personnel`: Personel yönetimi
-- `/api/equipment`: Ekipman yönetimi
-- `/api/warehouse`: Depo yönetimi
-- `/api/tasks`: Görev yönetimi
+- `/ api / earthquakes `: Earthquake data
+- `/ api / fires / all `: Fire data
+- `/ api /tsunami- alerts `: Tsunami warnings
+- `/ api / notifications` : Notification service
+- `/ api / cache / earthquakes` : Earthquake data from cache
+- `/ api / cache / fires` : Fire data from cache
+- `/ api / regions `: Region management
+- `/ api / personnel `: Personnel management
+- `/ api / equipment `: Equipment management
+- `/ api / warehouse` : Warehouse management
+- `/ api / tasks` : Task management
 
-##  Veritabanı Şeması
+# # Database Schema
 
-Sistem 31+ tablo ile kapsamlı bir veri modeli kullanmaktadır:
+The system uses a comprehensive data model with 31+ tables:
 
-### Ana Tablolar
-- `users`: Kullanıcı yönetimi
-- `regions`: Bölge hiyerarşisi
-- `equipment`: Ekipman takibi
-- `warehouse`: Depo yönetimi
-- `inventory`: Envanter sistemi
-- `tasks`: Görev yönetimi
-- `notifications`: Bildirim sistemi
+### Main Tables
+- ` users `: User management
+- ` regions `: Region hierarchy
+- ` equipment `: Equipment tracking
+- ` warehouse `: Warehouse management
+- ` inventory `: Inventory system
+- ` tasks `: Task management
+- ` notifications `: Notification system
 
-### Coğrafi Tablolar (PostGIS)
-- `geonames`: Küresel coğrafi veriler (95 ülke, 8,740 şehir, 973 ilçe)
-- `earthquake_zones`: Deprem bölgeleri
-- `coordinates`: Koordinat verileri
+### Geographic Tables ( PostGIS )
+- ` geonames `: Global geographic data (95 countries, 8,740 cities, 973 counties)
+- ` earthquake_zones `: Earthquake zones
+- ` coordinates `: Coordinate data
 
-### Veri İstatistikleri
-- ** Toplam Coğrafi Kayıt**: 9,808
-- ** Ülke Sayısı**: 95
-- ** Şehir Sayısı**: 8,740
-- ** İlçe Sayısı**: 973
+### Data Statistics
+- ** Total Geographic Records **: 9,808
+- ** Number of Countries **: 95
+- ** Number of Cities **: 8,740
+- ** Number of Districts **: 973
 
-##  Güvenlik ve Roller
+# # Security and Roles
 
-Sistem rol bazlı erişim kontrolü (RBAC) kullanmaktadır:
+The system uses role-based access control (RBAC):
 
-- **ADMIN**: Tam sistem erişimi
-- **MANAGER**: Kurum yönetimi
-- **REGIONAL_MANAGER**: Bölgesel yönetim
-- **STAFF**: Operasyonel personel
-- **VOLUNTEER**: Gönüllü kullanıcılar
+- **ADMIN**: Full system access
+- **MANAGER**: Institution management
+- **REGIONAL_MANAGER**: Regional management
+- **STAFF**: Operational staff
+- **VOLUNTEER**: Volunteer users
 
-##  Geliştirme Süreci
+# # Development Process
 
-### Kod Standardları
-- TypeScript kullanımı zorunlu
-- ESLint ve Prettier konfigürasyonu
-- Conventional Commits standardı
-- Kod review süreci
+### Code Standards
+- TypeScript usage is mandatory
+- ESLint and Prettier configuration
+- Conventional Commits standard
+- Code review process
 
-### Test Stratejisi
-- Unit testler (Jest)
-- Integration testler
-- E2E testler (Playwright)
-- API testleri
+### Testing Strategy
+- Unit tests (Jest)
+- Integration tests
+- E2E tests ( Playwright )
+- API tests
 
-##  Roadmap
+# # Roadmap
 
-### v2.0 Hedefleri
-- [ ] Mobil uygulama geliştirme
-- [ ] AI destekli risk analizi
-- [ ] Blockchain tabanlı kaynak takibi
-- [ ] IoT sensör entegrasyonu
-- [ ] Çoklu dil desteği
+### v2.0 Goals
+- [ ] Mobile application development
+- [ ] AI-supported risk analysis
+- [ ] Blockchain -based resource tracking
+- [ ] IoT sensor integration
+- [ ] Multi-language support
 
-### v1.5 Hedefleri (Mevcut)
-- [x] Gerçek zamanlı harita sistemi
-- [x] Kapsamlı envanter yönetimi
-- [x] Rol bazlı erişim kontrolü
-- [x] PDF raporlama sistemi
-- [x] Bildirim merkezi
+### v1.5 Targets (Current)
+- [x] Real-time map system
+- [x] Comprehensive inventory management
+- [x] Role-based access control
+- [x] PDF reporting system
+- [x] Notification center
 
-##  Katkı Sağlama
+# # Contribution
 
-Katkı sunmak için şu adımları izleyin:
+To contribute, follow these steps:
 
-1. Projeyi fork edin
-2. Yeni bir feature branch oluşturun: `git checkout -b feature/YeniOzellik`
-3. Değişikliklerinizi commit edin: `git commit -m 'Yeni özellik eklendi'`
-4. Branch'i push edin: `git push origin feature/YeniOzellik`
-5. Pull Request açın
+1. Fork the project
+2. A new feature Create a branch: ` git checkout -b feature / NewFeature`
+3. Commit your changes : `git commit -m 'New feature added'`
+4. Branch push : `git push origin feature / New Feature `
+5. Pull Open a request
 
-Daha fazla bilgi için `CONTRIBUTING.md` ve `CLA.md` dosyalarını inceleyin.
+See `CONTRIBUTING.md` and `CLA.md` for more information.
 
-##  Lisans
+# # Licence
 
-Bu yazılım **Apache 2.0** ve **BSD 3-Clause** lisansları altında sunulmaktadır. Kullanıcılar diledikleri lisansı seçerek kullanabilir.
+This software is available under the **Apache 2.0** and **BSD 3-Clause** licenses. Users can choose the license they want.
 
-### Apache 2.0 Lisansı
-Apache 2.0 lisansı, ticari ve açık kaynaklı projelerde kullanım için geniş izinler sağlar. Patent koruması ve katkı sağlayıcılar için yasal koruma içerir.
+### Apache 2.0 License
+The Apache 2.0 license provides broad permissions for use in commercial and open source projects. It includes patent protection and legal protections for contributors.
 
-### BSD 3-Clause Lisansı
-BSD 3-Clause lisansı, minimal kısıtlamalarla yeniden dağıtım ve kullanım izni verir. Orijinal telif hakkı bildirimi ve lisans metninin korunmasını gerektirir.
+### BSD 3-Clause License
+The BSD 3-Clause license permits redistribution and use with minimal restrictions. It requires preservation of the original copyright notice and license text.
 
-**Her iki lisans da geliştirici Mustafa Barış Arslantaş'ın telif haklarının korunmasını ve adının projeyle ilişkilendirilmesini şart koşar.**
+**Both licenses require that developer Mustafa Barış Arslantaş's copyright be protected and his name be associated with the project.* *
 
-Detaylı lisans metinleri için:
-- [Apache 2.0 License](LICENSE-APACHE)
-- [BSD 3-Clause License](LICENSE-BSD)
+For detailed license texts:
+- [Apache 2.0 License]( LICENSE-APACHE)
+- [BSD 3-Clause License]( LICENSE-BSD)
 
-##  İletişim
+# # Communication
 
-Proje hakkında sorularınız için GitHub Issues bölümünden veya doğrudan iletişime geçebilirsiniz:
+For questions about the project, visit GitHub You can contact us through the Issues section or directly:
 
-- **GitHub**: [https://github.com/ArslantasM/emergency-management](https://github.com/ArslantasM/emergency-management)
-- **E-posta**: arslantas.m@gmail.com
-- **Telefon**: +90 542 559 69 46
+- **GitHub**: [ https://github.com/ArslantasM/Emergency_Management_and_Coordination_System]( https://github.com/ArslantasM/Emergency_Management_and_Coordination_System)
+- **Email**: arslantas.m@gmail.com
+- **Phone**: +90 542 559 69 46
 
-##  Teşekkürler
+# # Thanks
 
-Küresel düzeyde insanların yararına olacak bu projede fikir, geliştirme süreci ve katkı ortamını destekleyen tüm gönüllülere teşekkür ederim. 
+I would like to thank all volunteers who supported the idea, development process and contribution environment in this project that will benefit people on a global scale.
 
 ---
 
 <div align="center">
 
-** Acil Durum Yönetim ve Koordinasyon Sistemi** ile dünya çapında afet yönetiminde teknolojik dönüşüm
+Technological transformation in disaster management worldwide with the <strong>Emergency Management and Coordination System</strong>
 
-[lh Star](https://github.com/ArslantasM/emergency-management) | [ Bug Report](https://github.com/ArslantasM/emergency-management/issues) | [ Feature Request](https://github.com/ArslantasM/emergency-management/issues)
+🌟 <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System">Star Project</a> |
+🐛 <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues">Bug Report</a> |
+✨ <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues">Feature Request</a>
 
 </div>
 
