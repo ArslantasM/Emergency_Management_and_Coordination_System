@@ -79,6 +79,9 @@ Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" ta
 2. **Kullanıcı İstekleri** → Next.js API Routes → Prisma ORM → PostgreSQL
 3. **Gerçek Zamanlı Güncellemeler** → WebSocket → Frontend Bileşenleri
 
+---
+
+
 ##  Sistem Modülleri ve Ekran Görüntüleri
 
 ###  Ana Dashboard
@@ -93,6 +96,9 @@ Ana kontrol paneli, sistem genelindeki kritik verilerin gerçek zamanlı görün
 - Bildirim merkezi
 - Sistem durumu göstergeleri
 
+---
+
+
 ###  Harita Modülü
 Küresel afet verilerinin görselleştirildiği interaktif harita sistemi.
 
@@ -104,6 +110,9 @@ Küresel afet verilerinin görselleştirildiği interaktif harita sistemi.
 - Katmanlı harita görünümleri
 - Coğrafi filtreleme ve arama
 - Popup detay bilgileri
+
+---
+
 
 ###  Bölge Yönetimi
 Hiyerarşik coğrafi yapının yönetildiği ve acil durum seviyelerinin belirlendiği modül.
@@ -117,6 +126,9 @@ Hiyerarşik coğrafi yapının yönetildiği ve acil durum seviyelerinin belirle
 - Coğrafi koordinat yönetimi
 - Bölge bazlı istatistikler
 
+---
+
+
 ###  Personel Yönetimi
 Kurumsal personel yapısının organize edildiği ve görev atamalarının yapıldığı sistem.
 
@@ -128,6 +140,9 @@ Kurumsal personel yapısının organize edildiği ve görev atamalarının yapı
 - İletişim bilgileri yönetimi
 - Görev geçmişi takibi
 - Performans değerlendirme
+
+---
+
 
 ### Depo Yönetimi
 Afet malzemelerinin depolanması ve dağıtımının koordine edildiği kapsamlı envanter sistemi.
@@ -142,6 +157,9 @@ Afet malzemelerinin depolanması ve dağıtımının koordine edildiği kapsaml�
 - Araç filosu takibi
 - Detaylı raporlama
 
+---
+
+
 ###  Ekipman Yönetimi
 Acil durum ekipmanlarının takibi, bakımı ve dağıtımının yönetildiği modül.
 
@@ -154,6 +172,9 @@ Acil durum ekipmanlarının takibi, bakımı ve dağıtımının yönetildiği m
 - Kullanım durumu izleme
 - Rezervasyon sistemi
 
+---
+
+
 ###  Envanter Yönetimi
 Genel malzeme ve kaynak envanterinin detaylı takip edildiği sistem.
 
@@ -165,6 +186,9 @@ Genel malzeme ve kaynak envanterinin detaylı takip edildiği sistem.
 - Son kullanma tarihi uyarıları
 - Minimum stok limitleri
 - Tedarikçi bilgileri
+
+---
+
 
 ###  Konteyner/Çadır Kent Yönetimi
 Geçici barınma alanlarının kurulumu ve yönetiminin koordine edildiği kapsamlı sistem.
@@ -179,6 +203,9 @@ Geçici barınma alanlarının kurulumu ve yönetiminin koordine edildiği kapsa
 - Kent personeli yönetimi
 - Lojistik ve malzeme dağıtımı
 
+---
+
+
 ###  Görev Yönetimi
 Acil durum operasyonlarının planlanması ve takip edildiği görev koordinasyon sistemi.
 
@@ -192,6 +219,9 @@ Acil durum operasyonlarının planlanması ve takip edildiği görev koordinasyo
 - Görev bağımlılıkları
 - Tamamlanma raporları
 
+---
+
+
 ###  Bildirim Merkezi
 Sistem genelindeki önemli olayların ve uyarıların yönetildiği merkezi bildirim sistemi.
 
@@ -203,6 +233,9 @@ Sistem genelindeki önemli olayların ve uyarıların yönetildiği merkezi bild
 - Otomatik uyarı sistemleri
 - Bildirim geçmişi
 - Kişiselleştirilmiş uyarılar
+
+---
+
 
 ###  Gönüllü Yönetimi
 Gönüllü koordinasyonu ve eğitim programlarının yönetildiği sistem.
@@ -217,6 +250,9 @@ Gönüllü koordinasyonu ve eğitim programlarının yönetildiği sistem.
 - Gönüllü mağazası
 - Grup organizasyonu
 
+---
+
+
 ###  Raporlama Sistemi
 Sistem verilerinin analiz edilip raporlandığı kapsamlı raporlama modülü.
 
@@ -229,6 +265,9 @@ Sistem verilerinin analiz edilip raporlandığı kapsamlı raporlama modülü.
 - Zamanlı rapor oluşturma
 - İstatistiksel analizler
 - Performans metrikleri
+
+---
+
 
 ###  Planlama Modülü
 Afet öncesi hazırlık ve müdahale planlarının oluşturulduğu stratejik planlama sistemi.
@@ -243,6 +282,9 @@ Afet öncesi hazırlık ve müdahale planlarının oluşturulduğu stratejik pla
 - Plan versiyonlama
 - Simülasyon desteği
 
+---
+
+
 ###  Log Yönetimi
 Sistem işlemlerinin kaydedildiği ve denetlendiği log takip sistemi.
 
@@ -255,6 +297,9 @@ Sistem işlemlerinin kaydedildiği ve denetlendiği log takip sistemi.
 - Güvenlik logları
 - Performans metrikleri
 - Log filtreleme ve arama
+
+---
+
 
 ###  Sistem Ayarları
 Sistem yapılandırması ve kullanıcı tercihlerinin yönetildiği ayarlar modülü.
@@ -269,6 +314,9 @@ Sistem yapılandırması ve kullanıcı tercihlerinin yönetildiği ayarlar mod�
 - Yedekleme yapılandırması
 - API konfigürasyonu
 
+---
+
+
 ###  Profil Yönetimi
 Kullanıcı hesap bilgilerinin ve kişisel tercihlerinin yönetildiği profil sistemi.
 
@@ -281,6 +329,9 @@ Kullanıcı hesap bilgilerinin ve kişisel tercihlerinin yönetildiği profil si
 - İletişim tercihleri
 - Güvenlik ayarları
 - Hesap geçmişi
+
+---
+
 
 ##  Kurulum
 
