@@ -21,4 +21,6 @@ The **Emergency Management and Coordination System** contributes to multiple *Un
 **Vision Forward:**  
 The community-driven module development process offers a sustainable approach to disaster management.
 
-> ✨ Support this open-source initiative—star it, share it, and shape its future!
+> Support this open-source initiative—star it, share it, and shape its future!
+>
+> ![SDG Aligned](https://img.shields.io/badge/SDG%20Aligned-Goals%209%2C%2011%2C%2013-3eb991?style=for-the-badge&logo=UnitedNations&logoColor=white)
