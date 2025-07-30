@@ -13,6 +13,22 @@ The Emergency Management and Coordination application is a complete, end-to-end,
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+
+### SDG Alignment
+
+This project actively supports the United Nations Sustainable Development Goals:
+
+- **Goal 9: Industry, Innovation and Infrastructure**
+- **Goal 11: Sustainable Cities and Communities**
+- **Goal 13: Climate Action**
+
+By combining open-source innovation, modular infrastructure, and real-time disaster coordination, the system contributes to resilient communities and inclusive climate action.
+
+![SDG Aligned](https://img.shields.io/badge/SDG%20Aligned-Goals%209%2C%2011%2C%2013-3eb991?style=for-the-badge&logo=UnitedNations&logoColor=white)
+
+
+
+
 ## Contents
 
 - [Project About](#project-about)
