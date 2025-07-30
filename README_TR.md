@@ -12,6 +12,22 @@ Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" ta
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
+
+## SDG Uyumlaştırması
+Bu proje Birleşmiş Milletler Sürdürülebilir Kalkınma Hedeflerini aktif olarak desteklemektedir:
+
+Hedef 9: Sanayi, İnovasyon ve Altyapı
+
+Hedef 11: Sürdürülebilir Şehirler ve Topluluklar
+
+Hedef 13: İklim Eylemi
+
+Açık kaynaklı inovasyonu, modüler altyapıyı ve gerçek zamanlı afet koordinasyonunu bir araya getiren sistem, dirençli topluluklara ve kapsayıcı iklim eylemine katkıda bulunuyor.
+
+![SDG Aligned](https://img.shields.io/badge/SDG%20Aligned-Goals%209%2C%2011%2C%2013-3eb991?style=for-the-badge&logo=UnitedNations&logoColor=white)
+
+
+
 ## İçindekiler
 
 - [ Proje Hakkında](#-proje-hakkında)
