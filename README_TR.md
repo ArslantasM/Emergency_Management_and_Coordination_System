@@ -1,6 +1,8 @@
 # Acil Durum Yönetim ve Koordinasyon Sistemi
 
-Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformudur. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.
+[![Made in Turkey](https://img.shields.io/badge/Made%20in-Turkey-red?style=for-the-badge)](https://github.com/IonicaBizau/made-in-turkey)
+
+Acil Durum Yönetim ve Koordinasyon uygulaması uçtan uca "kurumsal yapıda" tam bir afet yönetim uygulamasıdır. PostgreSQL, PostGIS, Next.js ve Python Flask ile geliştirilmiş, gerçek zamanlı afet verilerini toplayan ve görselleştiren açık kaynaklı bir koordinasyon platformudur. Küresel düzeyde deprem, yangın ve tsunami verilerini takip ederek afet yönetimini kolaylaştırmayı hedefler. Kurumsal yapıda tasarlanmış sistem bütüncül olarak afet yönetimini kolaylaştırmayı ve birimler arasında koordinasyonu arttırmayı hedefler.Bu proje, Türkiye'de geliştirilen açık kaynak yazılımlar arasında yer almakta olup made-in-turkey listesinde gururla sergilenmektedir.
 
 ![Ana Dashboard](assets/screenshots/dashboard-main.png)
 
