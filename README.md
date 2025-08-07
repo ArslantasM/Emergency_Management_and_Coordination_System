@@ -1,7 +1,8 @@
 # Emergency Management and Coordination System
 #### Built for Resilience, Powered by Community
+[![Made in Turkey](https://img.shields.io/badge/Made%20in-Turkey-red?style=for-the-badge)](https://github.com/IonicaBizau/made-in-turkey)
 
-The Emergency Management and Coordination application is a complete, end-to-end, enterprise-class disaster management application. Developed with PostgreSQL , PostGIS , Next.js, and Python Flask , it's an open-source coordination platform that collects and visualizes real-time disaster data. It aims to streamline disaster management by tracking global earthquake, fire, and tsunami data. Designed with an enterprise-level architecture, the system aims to facilitate holistic disaster management and enhance coordination among units. Made in Turkey 🇹🇷
+The Emergency Management and Coordination application is a complete, end-to-end, enterprise-class disaster management application. Developed with PostgreSQL , PostGIS , Next.js, and Python Flask , it's an open-source coordination platform that collects and visualizes real-time disaster data. It aims to streamline disaster management by tracking global earthquake, fire, and tsunami data. Designed with an enterprise-level architecture, the system aims to facilitate holistic disaster management and enhance coordination among units. This project is among the open source software developed in Türkiye and is proudly displayed on the Made in Turkey 🇹🇷 list.
 
 ![Ana Dashboard](assets/screenshots/dashboard-main.png)
 
@@ -532,6 +533,7 @@ Technological transformation in disaster management worldwide with the <strong>E
 ✨ <a href="https://github.com/ArslantasM/Emergency_Management_and_Coordination_System/issues">Feature Request</a>
 
 </div>
+
 
 
 
